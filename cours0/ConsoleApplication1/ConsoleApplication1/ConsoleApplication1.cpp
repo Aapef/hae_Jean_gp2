@@ -2,11 +2,36 @@
 //
 
 #include "pch.h"
-#include <iostream>
+#include "MonHeader.hpp"
+//#include <iostream>
+#include <cstdlib>
+#include <cstdio>
+
+
+Vec3 incrX(Vec3 _in){
+	_in.x++;
+	return _in;
+}
+
 
 int main()
 {
-    std::cout << "Hello World!\n"; 
+    //std::cout << "Hello World!\n"; // = debug.log
+
+	int foo = 0;
+	const char* label = "sapin";  //en C
+	const char label2[6] = { 's', 'a', 'p', 'i', 'n', 0 }; //le 0 est obligatoire sinon l'ordinateur affichera de la mémoire
+	printf("Hello world this is a test : %d label : %s\n", foo, label);
+
+	float v = 0.5f;
+	double ff = 0.5;
+
+	Vec3 toto = { 1,2,3 };
+
+	incrX(toto);
+
+	printf("xval : %f\n", toto.x);
+	//std::string labelcpp = "";  // en c++
 }
 
 // Exécuter le programme : Ctrl+F5 ou menu Déboguer > Exécuter sans débogage
