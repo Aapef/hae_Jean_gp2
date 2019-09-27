@@ -2,9 +2,9 @@
 
 
 struct Vec3 {
-	float x;
-	float y;
-	float z;
+	int x;
+	int y;
+	int z;
 };
 /*
 typedef struct Vec3 {
@@ -19,6 +19,16 @@ typedef struct List {
 	LIST p;
 } LIST;
 
+
+struct MonEpee;
+
+struct MaBotte{
+MonEpee * x;
+};
+
+struct MonEpee{
+MaBotte * x;
+};
 */
 
 /*typedef int MONINT;
