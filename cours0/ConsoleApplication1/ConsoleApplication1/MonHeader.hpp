@@ -36,5 +36,6 @@ typedef int IDENTIFIANT;
 
 class Player {
 public:
-	IDENTIFIANT 
+	IDENTIFIANT keyID;
+	IDENTIFIANT passeportID;
 };*/

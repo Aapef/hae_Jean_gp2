@@ -21,6 +21,27 @@ Vec3 StackOverflow(Vec3 _in) {
 	return StackOverflow(temp);
 }
 
+
+
+
+int Strlen(const char* source) {
+	int length = 0;
+	while (*source != 0) {
+		length++;
+		source++;
+	}
+	return length;
+}
+
+int Strcpy(char * dest, const char * src) {
+	while (*src != 0) {
+		*dest = *src;
+		dest++;
+		src++;
+	}
+	return 0;
+}
+
 int main()
 {
     //std::cout << "Hello World!\n"; // = debug.log
@@ -75,7 +96,7 @@ int main()
 	printf("%c\n", *ptr);
 
 	Vec3 * t3 = t2 + 1; // donne l'adresse de l'élément suivant de vecTab
-
+/*
 	auto start = std::chrono::system_clock::now();
 
 	int * bigBlock = (int*)malloc(1024 * 1024 * 1024);
@@ -88,7 +109,24 @@ int main()
 	auto end = std::chrono::system_clock::now();
 	auto nano = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
 
-	printf("time : %d\n", nano);
+	printf("time : %d\n", nano);*/
+
+	Vec3 tableau[16];
+	Vec3 *tableau0 = (Vec3*)malloc(sizeof(Vec3) * 16); //en C pur
+	memset(tableau, 0, sizeof(Vec3) * 16);
+	Vec3 *tableau1 = (Vec3*)calloc(sizeof(Vec3), 16); //en C pur
+
+	Vec3 *tableau2 = new Vec3[16]; //en c++
+	Vec3 * unseulvec = new Vec3();
+	Vec3 unsseulvecaussimaissurletas = Vec3();
+
+
+
+	const char * source = "mon lapin est dodu";
+	char * dest = (char*)calloc(1024, sizeof(char));
+	Strcpy(dest, source);
+
+	printf("dest len:%d val: %s  \n", Strlen(source), dest);
 
 	int z = 0;
 }
