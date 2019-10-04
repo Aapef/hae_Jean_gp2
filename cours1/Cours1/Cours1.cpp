@@ -223,6 +223,22 @@ int reste(int a, int b)
 	return a - b*onrec(a, b);
 }
 
+int StrCpy(const char* src, char* dest) 
+{
+	*dest = *src;
+	if (*src == 0) return 0;
+	else StrCpy(src+1, dest+1);
+}
+
+
+int ZeroMemory(char* dest, int size)
+{
+	if (size == 0) return 0;
+	else { *dest = 0;  ZeroMemory(dest + 1, size - 1); }
+}
+
+
+
 void TestRec() 
 {
 	int foo = addrec(5, 6);
@@ -236,5 +252,11 @@ void TestRec()
 	int foo10 = onrec(6, 3);
 	int foo11 = onrec(-6, 3);
 	int foo12 = reste(15, 4);
-	int i = 0;
+	char destination [32] = "azertyuiop";
+	const char * src= "qsdfg";
+	int szBuf = 32;
+	char * buffer = (char*)malloc(szBuf + 1);
+	buffer[32] = 'x';
+	ZeroMemory(buffer, szBuf);
+	system("pause");
 }
