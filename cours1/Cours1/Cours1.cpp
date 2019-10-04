@@ -183,17 +183,43 @@ int StrLen(char* src) {
 
 int addrec(int a, int b) {
 	if (b == 0) return a;
-	else { printf("a = %i  b = %i\n", a, b); return addrec(a + 1, b - 1);  }
+	else {  return addrec(a + 1, b - 1);  }
 }
 
 int addrec2(int a, int b) {
-	if (b == 0) return a;
-	else { printf("a = %i  b = %i\n", a, b); return 1 + addrec2(a, b - 1); }
+	if (b == 0) return 1;
+	else {  return 1 + addrec2(a, b - 1); }
 }
+
+
+
+int subrec(int a, int b) {
+	printf("a = %i  b = %i\n", a, b);
+	if (b == 0) return a;
+	else if(b>0)return subrec(a, b - 1) - 1;
+	else if (b < 0)return subrec(a, b + 1) + 1;
+}
+
+int byrec(int a, int b) {
+	if (b == 0) return 0;	
+	else if (b > 0) 
+		return byrec(a, b - 1) + a; 
+	else if (b < 0) 
+		return byrec(a, b + 1) - a; 
+}
+
+
 
 void TestRec() 
 {
 	int foo = addrec(5, 6);
 	int foo2 = addrec2(6, 9);
+	int foo3 = byrec(5, 9);
+	int foo4 = byrec(5, -9);
+	int foo32 = byrec(-5, 9);
+	int foo42 = byrec(-5, -9);
+	int foo5 = byrec(0, -9);
+	int foo52 = byrec(-6, 0);
+	int foo10 = onrec(6, 3);
 	int i = 0;
 }
