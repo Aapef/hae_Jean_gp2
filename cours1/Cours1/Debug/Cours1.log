@@ -1,5 +1,0 @@
-﻿  Cours1.cpp
-c:\workspace\jean\hae_jean_gp2\cours1\cours1\cours1.cpp(76): warning C4715: 'StrChr4' : les chemins de contrôle ne retournent pas tous une valeur
-c:\workspace\jean\hae_jean_gp2\cours1\cours1\cours1.cpp(201): warning C4715: 'subrec' : les chemins de contrôle ne retournent pas tous une valeur
-c:\workspace\jean\hae_jean_gp2\cours1\cours1\cours1.cpp(209): warning C4715: 'byrec' : les chemins de contrôle ne retournent pas tous une valeur
-  Cours1.vcxproj -> c:\WORKSPACE\Jean\hae_Jean_gp2\cours1\Cours1\Debug\Cours1.exe
