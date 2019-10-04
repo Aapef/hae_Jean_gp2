@@ -39,6 +39,31 @@ int StrChr2(char * grange, char chat) {
 	return pos;
 }
 
+
+
+int StrChr2Cor(char * grange, char chat) {
+	char* oldGrange = grange;
+	while (*grange)
+	{
+		if (*grange == chat) {
+			return (int)(grange - oldGrange);
+		}
+		grange++;
+	}
+	return -1;
+}
+
+int StrChr3(char * grange, char chat) 
+{
+	int counter = 0;
+	while (grange[counter] != 0) {
+		if (grange[counter] == chat) { return counter; }
+
+		counter++;
+	}
+	return -1;
+}
+
 void Memcpy(char * dest, char * src, int size) {
 	for (int i = 0; i < size; i++) {
 		*dest = *src;
@@ -66,5 +91,5 @@ int main()
 
 	char chateau[32] = "chateau";
 	char soldat = 'e';
-	printf("position : %i\n", StrChr(chateau, soldat));
+	printf("position : %i\n", StrChr3(chateau, soldat));
 }
