@@ -1,0 +1,40 @@
+Couleur, Son, Emotion, Gameplay
+
+Trailer 1 : RUINER
+
+	Sombre
+	Fermé
+	Violence
+	Nerveux
+
+	
+Trailer 2 : Furi
+
+	Difference
+	Rapide
+	Determination
+	Rapide
+
+
+Trailer 3 : Mother Russia Bleeds
+
+	Nuit
+	Danger
+	Folie
+	Violence
+
+
+Trailer 4 : Journey
+
+	Onirique
+	Mystère
+	Envie
+	Calme
+
+
+Trailer 5 : Gris
+
+	Onirique
+	Aventure
+	Recherche
+	Douceur
