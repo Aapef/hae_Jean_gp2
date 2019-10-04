@@ -208,6 +208,22 @@ int byrec(int a, int b) {
 		return byrec(a, b + 1) - a; 
 }
 
+int onrec(int a, int b)
+{
+	if (a == 0) return 0;
+	if (b < 0 && a < 0) return -onrec(a, b);
+	if (a < 0) return -onrec(-a, b);
+	if (b < 0) return -onrec(a, -b);
+	if (a < b)  return 0;
+	return 1 + onrec(a - b, b);
+	
+}
+
+
+int reste(int a, int b) 
+{
+	return a - b*onrec(a, b);
+}
 
 
 void TestRec() 
@@ -221,5 +237,7 @@ void TestRec()
 	int foo5 = byrec(0, -9);
 	int foo52 = byrec(-6, 0);
 	int foo10 = onrec(6, 3);
+	int foo11 = onrec(-6, 3);
+	int foo12 = reste(15, 4);
 	int i = 0;
 }
