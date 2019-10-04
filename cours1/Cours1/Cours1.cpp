@@ -216,15 +216,12 @@ int onrec(int a, int b)
 	if (b < 0) return -onrec(a, -b);
 	if (a < b)  return 0;
 	return 1 + onrec(a - b, b);
-	
 }
-
 
 int reste(int a, int b) 
 {
 	return a - b*onrec(a, b);
 }
-
 
 void TestRec() 
 {
