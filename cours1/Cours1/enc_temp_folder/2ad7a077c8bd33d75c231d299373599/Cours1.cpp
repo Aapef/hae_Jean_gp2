@@ -267,7 +267,7 @@ char * StrChrRec(char * str, char tok)
 
 char * StrStrRec(char * str, char * look) 
 {
-	if (*look == 0) return str;
+	if (*look == 0) return look;
 	else if (*str == 0 ) return nullptr;
 	if (*str == *look) 
 	{ 
