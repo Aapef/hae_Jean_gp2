@@ -298,11 +298,22 @@ char * StrStrRec2(char * str, char * look)
 		ref = look; 
 		change = false; 
 	}
-	if (*look == 0) { return str; }
-	else if (*str == 0) { change = true; return nullptr; }
+	if (*look == 0) 
+	{ 
+		return str; 
+	}
+	else if (*str == 0) 
+	{ 
+		change = true; 
+		return nullptr; 
+	}
 	if (*str == *look)
 	{
-		if (StrStrRec2(str + 1, look + 1) != nullptr) { change = true; return str; }
+		if (StrStrRec2(str + 1, look + 1) != nullptr) 
+		{ 
+			change = true; 
+			return str; 
+		}
 	}
 	if(*look == *ref)
 	return StrStrRec2(str + 1, look);
