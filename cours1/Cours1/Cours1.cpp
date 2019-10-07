@@ -265,17 +265,51 @@ char * StrChrRec(char * str, char tok)
 	return StrChrRec(str + 1, tok);
 }
 
-char * StrStrRec(char * str, char * look) 
+
+//VERSION A 2 FONCTIONS (OK)
+bool lookfor(char * str, char * look)
+{
+	if (*look == 0) return true;
+	if (*look != *str) return false;
+	else return lookfor(str + 1, look + 1);
+}
+
+
+char * StrStrRec1(char * str, char * look) 
 {
 	if (*look == 0) return str;
-	else if (*str == 0 ) return nullptr;
+	else if (*str == 0) return nullptr;
 	if (*str == *look) 
 	{ 
-		char * ptr = StrStrRec(str + 1, look + 1);
-		if (ptr != nullptr) return str;
+		if(lookfor(str, look) == true) { return str; }
 	}
-	return StrStrRec(str + 1, look);
+	return StrStrRec1(str + 1, look);
 }
+
+
+//TEST VERSION A UNE FONCTION (OK (ça à l'air))
+
+char * StrStrRec2(char * str, char * look)
+{
+	static bool change = true;
+	static char * ref = look;
+	if (change) 
+	{ 
+		ref = look; 
+		change = false; 
+	}
+	if (*look == 0) { return str; }
+	else if (*str == 0) { change = true; return nullptr; }
+	if (*str == *look)
+	{
+		if (StrStrRec2(str + 1, look + 1) != nullptr) { change = true; return str; }
+	}
+	if(*look == *ref)
+	return StrStrRec2(str + 1, look);
+	else return nullptr;
+}
+
+
 
 void TestRec() 
 {
@@ -291,7 +325,10 @@ void TestRec()
 	int foo11 = onrec(-6, 3);
 	int foo12 = reste(15, 4);
 	char destination [32] = "azertyuiop";
+	char destination2[32] = "azertqsdyuqsdfgiop";
+	char destination3[32] = "azertqsdyuqsdf";
 	char src [10] = "qsdfg";
+	char src2[10] = "qsdf";
 	int szBuf = 32;
 	char * buffer = (char*)malloc(szBuf + 1);
 	buffer[32] = 'x';
@@ -301,8 +338,12 @@ void TestRec()
 	const char * char2 = "boule";
 	int z = StrCmpRec(char1, char2);
 	z;
-	char * bitou = StrStrRec(destination,src);
+	char * bitou = StrStrRec2(destination,src);
 	*bitou;
+	char * bitou2 = StrStrRec2(destination2, src);
+	*bitou2;
+	char * bitou3 = StrStrRec2(destination3, src2);
+	*bitou3;
 	
 	system("pause");
 }
