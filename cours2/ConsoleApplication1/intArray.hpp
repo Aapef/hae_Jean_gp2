@@ -2,6 +2,8 @@
 #include <cstdio>
 #include <cstdlib>
 #include <string>
+#include <Windows.h>
+
 
 class intArray 
 {
@@ -31,6 +33,59 @@ public:
 	{
 		ensure(i);
 		return array[i];
+	}
+
+	void remove(int pos) 
+	{
+		for (int i = 0; i < curSize - 1; i++) 
+		{
+			if (i < pos) array[i] = array[i];
+			else array[i] = array[i + 1];
+		}
+		curSize = curSize - 1;
+	}
+	
+	void RaNdOmIzE() 
+	{
+		std::srand(GetTickCount());
+		for (int i = 0; i < curSize; i++) 
+		{	
+			array[i] = std::rand();
+		}
+	}
+
+	void tri() 
+	{
+		int * array2 = new int[curSize];
+		int size = curSize;
+		for (int i = 0; i < size; i++) 
+		{
+			int z = array[0];
+			int jref = 0;
+			for (int j = 0; j < curSize; j++)
+			{
+				if (z > array[j]) 
+				{
+					z = array[j];
+					jref = j;
+				}
+			}
+			remove(jref);
+			array2[i] = z;
+		}
+		delete(array);
+		array = array2;
+		curSize = size;
+	}
+ 
+	int searchposition(int elem) 
+	{
+		for (int i = 0; i < curSize; i++) 
+		{
+			if (elem <= array[i])
+				return i;
+			else if (i == curSize - 1) return -1;
+		}
 	}
 };
 

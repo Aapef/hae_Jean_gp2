@@ -54,7 +54,7 @@ void intArray::set(int pos, int elem)
 
 void intArray::pushfirst(int elem)
 {
-	if (curSize >= maxSize) ensure(maxSize + 1);
+	ensure(maxSize + 1);
 	int * array2 = new int[maxSize];
 	for (int i = 0; i < maxSize; i++)
 	{
@@ -78,7 +78,7 @@ void intArray::pushback(int elem)
 
 void intArray::insert(int elem, int pos)
 {
-	if (curSize >= maxSize) ensure(maxSize + 1);
+	if (pos <= maxSize + 1)ensure(maxSize + 1); else ensure(pos);
 	int * array2 = new int[maxSize];
 	for (int i = 0; i < maxSize; i++)
 	{
@@ -91,4 +91,5 @@ void intArray::insert(int elem, int pos)
 	}
 	array[pos] = elem;
 	if (curSize < maxSize) curSize = curSize + 1;
+	if (pos > curSize) curSize = pos + 1;
 }
