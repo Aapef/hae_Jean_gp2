@@ -265,6 +265,7 @@ char * StrChrRec(char * str, char tok)
 	return StrChrRec(str + 1, tok);
 }
 
+//Strstr
 
 // Strstr : VERSION A 2 FONCTIONS (OK)
 bool lookfor(char * str, char * look)
@@ -287,7 +288,7 @@ char * StrStrRec1(char * str, char * look)
 }
 
 
-//Strstr : VERSION A UNE FONCTION (OK (ça à l'air))
+// StrStr : VERSIONS A UNE FONCTION (OK (ça à l'air))
 
 char * StrStrRec2(char * str, char * look)
 {
@@ -322,7 +323,22 @@ char * StrStrRec2(char * str, char * look)
 	else return nullptr;
 }
 
+//
 
+char * StrStrRec3(char * str, char * look, char * ref = nullptr)
+{
+	if (ref == nullptr) ref = look;
+	if (*look == 0)	return str;
+	else if (*str == 0)	return nullptr;
+	if (*str == *look)
+	{
+		if (StrStrRec3(str + 1, look + 1, ref) != nullptr)	return str;
+	}
+	if (*look == *ref)	return StrStrRec3(str + 1, look, ref);
+	else return nullptr;
+}
+
+//END
 
 void TestRec() 
 {
@@ -351,13 +367,13 @@ void TestRec()
 	const char * char2 = "boule";
 	int z = StrCmpRec(char1, char2);
 	z;
-	char * bitou = StrStrRec2(destination,src);
+	char * bitou = StrStrRec3(destination,src);
 	*bitou;
-	char * bitou2 = StrStrRec2(destination2, src);
+	char * bitou2 = StrStrRec3(destination2, src);
 	*bitou2;
-	char * bitou3 = StrStrRec2(destination3, src2);
+	char * bitou3 = StrStrRec3(destination3, src2);
 	*bitou3;
-	char * bitou4 = StrStrRec2(destination3, src);
+	char * bitou4 = StrStrRec3(destination3, src);
 	*bitou4;
 
 	
