@@ -46,6 +46,7 @@ int main()
 	montableau.pushfirst(51);
 	montableau.pushback(52);
 	montableau.insert(40, 8);
+	montableau.pushback(53);
 	int i = montableau[8];
 
 	intArray montableau2 = intArray(0, "tablo2");
