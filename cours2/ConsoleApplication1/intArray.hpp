@@ -12,7 +12,33 @@ public:
 	int maxSize = 0;
 	int curSize = 0;
 
-	intArray(int size, const char * name = nullptr)
+	intArray(int size, const char * name = nullptr);
+
+	~intArray();
+
+	void ensure(int size);
+
+	void set(int pos, int elem);
+
+	void pushfirst(int elem);
+
+	void pushback(int elem);
+
+
+	void insert(int elem, int pos);
+
+	int operator[] (int i) 
+	{
+		ensure(i);
+		return array[i];
+	}
+};
+
+
+
+/*
+
+intArray(int size, const char * name = nullptr)
 	{
 		this->name = name;
 		printf("construction %s\n", this ->name.c_str());
@@ -30,22 +56,22 @@ public:
 		maxSize = size;
 	}
 
-	~intArray() 
+	~intArray()
 	{
 		printf("destruction %s\n", name.c_str());
 	}
 
-	void ensure(int size) 
+	void ensure(int size)
 	{
 		if (size <= maxSize) {
 			return;
 		}
 		else {
 			int * array2 = new int[size];
-			for (int i = 0; i < size; i++) 
-			{ 
-				if (i < maxSize) array2[i] = array[i]; 
-				else array2[i] = 0; 
+			for (int i = 0; i < size; i++)
+			{
+				if (i < maxSize) array2[i] = array[i];
+				else array2[i] = 0;
 			}
 			maxSize = size;
 			delete(array);
@@ -53,14 +79,14 @@ public:
 		}
 	}
 
-	void set(int pos, int elem) 
+	void set(int pos, int elem)
 	{
 		ensure(pos + 1);
 		array[pos] = elem;
 		curSize = pos + 1;
 	}
 
-	void pushfirst(int elem) 
+	void pushfirst(int elem)
 	{
 		if (curSize >= maxSize) ensure(maxSize + 1);
 		int * array2 = new int[maxSize];
@@ -69,7 +95,7 @@ public:
 			array2[i] = array[i];
 		}
 
-		for (int i = 0; i < maxSize; i++) 
+		for (int i = 0; i < maxSize; i++)
 		{
 			if (i > 0) { array[i] = array2[i - 1]; }
 		}
@@ -77,7 +103,7 @@ public:
 		curSize = curSize + 1;
 	}
 
-	void pushback(int elem) 
+	void pushback(int elem)
 	{
 		if (curSize >= maxSize) ensure(maxSize + 1);
 		if (curSize < maxSize) array[curSize] = elem;
@@ -102,9 +128,4 @@ public:
 		if (curSize < maxSize) curSize = curSize + 1;
 	}
 
-	int operator[] (int i) 
-	{
-		ensure(i);
-		return array[i];
-	}
-};
+*/
