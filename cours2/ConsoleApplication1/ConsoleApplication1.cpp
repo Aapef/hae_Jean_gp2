@@ -7,7 +7,7 @@
 
 int main()
 {
-    std::cout << "Hello World!\n"; 
+	//printf("%d", intArray::TEST);
 }
 
 // Exécuter le programme : Ctrl+F5 ou menu Déboguer > Exécuter sans débogage
