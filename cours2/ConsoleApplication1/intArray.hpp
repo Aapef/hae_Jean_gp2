@@ -50,7 +50,7 @@ public:
 		std::srand(GetTickCount());
 		for (int i = 0; i < curSize; i++) 
 		{	
-			array[i] = std::rand();
+			array[i] = std::rand()%100;
 		}
 	}
 
@@ -86,6 +86,29 @@ public:
 				return i;
 			else if (i == curSize - 1) return -1;
 		}
+	}
+
+	int searchpositiondich(int elem) 
+	{
+		tri();
+		int min = 0;
+		int max = curSize;
+		int i = (int)(min + ((max - min) / 2)); 
+
+		while(array[i] != elem)
+		{
+			if (elem > array[i] && min != i)
+				min = i;
+			else 
+				max = i;
+
+			if(max != min) 
+				i = (int)(min + ((max - min) / 2));
+			else 
+				break;
+		}
+		if (array[i] != elem) return -1;
+		else return i;
 	}
 };
 

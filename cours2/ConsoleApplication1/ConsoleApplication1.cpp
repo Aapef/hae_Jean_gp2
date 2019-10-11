@@ -28,7 +28,7 @@ int main()
 		montableau.set(i, i);
 	}
 	montableau.set(15, 5);
-	montableau.set(16, 8);
+	//montableau.set(16, 8);
 	montableau.pushfirst(51);
 	montableau.pushback(52);
 	montableau.insert(40, 8);
@@ -47,6 +47,7 @@ int main()
 	intArray montableau2 = intArray(0, "tablo2");
 	montableau2.insert(51, 0);
 
-	int zbeub = montableau3.searchposition(17);
+	int zbeub = montableau.searchposition(50);
+	int zbeub2 = montableau.searchpositiondich(50);
 
 }
