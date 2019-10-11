@@ -266,7 +266,7 @@ char * StrChrRec(char * str, char tok)
 }
 
 
-//VERSION A 2 FONCTIONS (OK)
+// Strstr : VERSION A 2 FONCTIONS (OK)
 bool lookfor(char * str, char * look)
 {
 	if (*look == 0) return true;
@@ -287,7 +287,7 @@ char * StrStrRec1(char * str, char * look)
 }
 
 
-//TEST VERSION A UNE FONCTION (OK (ça à l'air))
+//Strstr : VERSION A UNE FONCTION (OK (ça à l'air))
 
 char * StrStrRec2(char * str, char * look)
 {
@@ -298,6 +298,8 @@ char * StrStrRec2(char * str, char * look)
 		ref = look; 
 		change = false; 
 	}
+
+
 	if (*look == 0) 
 	{ 
 		return str; 
@@ -355,6 +357,9 @@ void TestRec()
 	*bitou2;
 	char * bitou3 = StrStrRec2(destination3, src2);
 	*bitou3;
+	char * bitou4 = StrStrRec2(destination3, src);
+	*bitou4;
+
 	
 	system("pause");
 }
