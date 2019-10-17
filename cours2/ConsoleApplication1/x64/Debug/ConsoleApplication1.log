@@ -1,0 +1,5 @@
+﻿  ConsoleApplication1.cpp
+d:\repo\hae_jean_gp2\cours2\consoleapplication1\consoleapplication1.cpp(24): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+  intArray.cpp
+  Génération de code en cours...
+  ConsoleApplication1.vcxproj -> D:\Repo\hae_Jean_gp2\cours2\ConsoleApplication1\x64\Debug\ConsoleApplication1.exe

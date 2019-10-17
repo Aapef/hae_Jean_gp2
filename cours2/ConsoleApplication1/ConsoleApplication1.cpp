@@ -2,6 +2,7 @@
 #include "pch.h"
 #include <iostream>
 #include "intArray.hpp"
+#include "floatArray.hpp"
 
 
 void assert(bool boolou) {
@@ -11,8 +12,23 @@ void assert(bool boolou) {
 	}
 }
 
+
+
 int main()
 {
+	floatArray montableauf = floatArray(16, "tablo");
+
+	montableauf.ensure(18);
+	for (int i = 0; i < montableauf.maxSize; i++) 
+	{
+		montableauf.set(i, i);
+	}
+	montableauf.pushfirst(154.1f);
+	montableauf.insert(141.0f, 5);
+	montableauf.tri();
+
+	int i = 0;
+	/*
 	//printf("%d", intArray::TEST)
 	auto nametab0 = "tab0";
 	auto nametab1 = "tab1";
@@ -49,5 +65,7 @@ int main()
 
 	int zbeub = montableau.searchposition(50);
 	int zbeub2 = montableau.searchpositiondich(50);
-
+	*/
 }
+
+
