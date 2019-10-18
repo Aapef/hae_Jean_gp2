@@ -116,7 +116,7 @@ public:
 	{
 		int i = (int)(min + ((max - min) / 2));
 
-		if (max == min) { if (array[i] < elem) return -1; else return i; }
+		if (max == min) { if (array[i] < elem) return i+1; else return i; }
 
 		if (elem >= array[i] && min != i)
 			return _searchpositiondichrec(elem, i, max);
