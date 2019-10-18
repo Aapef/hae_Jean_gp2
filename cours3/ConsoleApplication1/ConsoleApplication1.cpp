@@ -3,11 +3,41 @@
 #include "floatArray.hpp"
 #include "intArray.hpp"
 #include "Util.hpp"
+#include "Tree.hpp"
+#include "List.hpp"
 
 int main()
 {
 	
-	auto montableau = intArray(1024, "tablo");
+	FloatTree* tree = new FloatTree();
+
+	Node<float> * leaf = new Node<float>(8.0f);
+
+	leaf->insert(10.0f);
+	leaf->insert(6.0f);
+	leaf->insert(4.0f);
+
+	leaf->Remove(6.0f);
+
+	int foniafeoniafe = leaf->getLength();
+
+	bool z = leaf->Contains(10.0f);
+	
+	
+	/*
+	IntList* l = new IntList(8);
+	l = l->Concat(7);
+
+	l = l->Remove(7);
+
+	int z = l->Length();
+	*/
+
+	int toto = 0;
+	
+	
+	
+	/*auto montableau = intArray(1024, "tablo");
 	
 	montableau.set(montableau.maxSize - 1, 1);
 	montableau.RaNdOmIzE();
@@ -41,7 +71,7 @@ int main()
 	int b = montableau2.searchpositiondichrec(75);*/
 
 
-	auto montableautest = intArray(10, "tablo");
+	/*auto montableautest = intArray(10, "tablo");
 	montableautest.set(montableautest.maxSize - 1, 50);
 	montableautest.RaNdOmIzE();
 	//montableautest.set(3, 50);
@@ -50,5 +80,5 @@ int main()
 	int b = montableautest.searchpositiondich(150);
 
 
-	system("pause");
+	system("pause");*/
 }
