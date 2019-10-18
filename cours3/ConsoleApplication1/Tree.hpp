@@ -1,5 +1,5 @@
 #pragma once
-
+#include <functional>
 template<typename T>
 class Node 
 {
@@ -83,6 +83,36 @@ public:
 		if (right != nullptr)
 			z = z  + right->getLength();
 		return z;
+	}
+
+	void dfsprint() {
+		if(left) left->dfsprint();
+		printf("%f ",elem);
+		if(right) right->dfsprint();
+	}
+
+	void bfsprint() {
+		printf("%f ", elem);
+		if (left) left->bfsprint();
+		if (right) right->bfsprint();
+	}
+
+	void dfsprintreverse() {
+		if (right) right->dfsprintreverse();
+		printf("%f ", elem);
+		if (left) left->dfsprintreverse();
+		
+		
+	}
+
+	void dfs(std::function<void(Node*)> fun)
+	{
+
+	}
+
+	void bfs(std::function<void(Node*)> fun)
+	{
+
 	}
 
 };

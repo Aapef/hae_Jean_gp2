@@ -17,11 +17,13 @@ int main()
 	leaf->insert(6.0f);
 	leaf->insert(4.0f);
 
-	leaf->Remove(6.0f);
+	//leaf->Remove(6.0f);
 
 	int foniafeoniafe = leaf->getLength();
 
 	bool z = leaf->Contains(10.0f);
+
+	leaf->bfsprint();
 	
 	
 	/*
