@@ -152,10 +152,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="floatArray.hpp" />
+    <ClInclude Include="Heap.hpp" />
     <ClInclude Include="intArray.hpp" />
     <ClInclude Include="List.hpp" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Tree.hpp" />
+    <ClInclude Include="Treetwo.hpp" />
     <ClInclude Include="Util.hpp" />
   </ItemGroup>
   <ItemGroup>

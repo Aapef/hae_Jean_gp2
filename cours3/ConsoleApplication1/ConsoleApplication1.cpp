@@ -3,20 +3,23 @@
 #include "floatArray.hpp"
 #include "intArray.hpp"
 #include "Util.hpp"
-#include "Tree.hpp"
+#include "Treetwo.hpp"
 #include "List.hpp"
+#include "Heap.hpp"
 
 int main()
 {
 	
-	FloatTree* tree = new FloatTree();
+	/*FloatTree* tree = new FloatTree();
 
 	Node<float> * leaf = new Node<float>(8.0f);
 
 	leaf->insert(10.0f);
 	leaf->insert(6.0f);
 	leaf->insert(4.0f);
-
+	leaf->insert(5.0f);
+	leaf->insert(3.0f);
+	leaf->insert(12.0f);
 	//leaf->Remove(6.0f);
 
 	int foniafeoniafe = leaf->getLength();
@@ -34,6 +37,22 @@ int main()
 
 	int z = l->Length();
 	*/
+
+	auto heapheapheap = new Heap(10);
+
+	heapheapheap->Heapify(15);
+	heapheapheap->Heapify(4);
+	heapheapheap->Heapify(5);
+	heapheapheap->Heapify(9);
+	heapheapheap->Heapify(16);
+	heapheapheap->Heapify(11);
+	heapheapheap->Heapify(5);
+	heapheapheap->Heapify(8);
+	heapheapheap->Heapify(1);
+
+	heapheapheap->GetElems();
+
+	heapheapheap->GetElemsRev();
 
 	int toto = 0;
 	
