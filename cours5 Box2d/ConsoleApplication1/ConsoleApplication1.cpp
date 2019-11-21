@@ -10,13 +10,8 @@
 #include "Lib.hpp"
 #include "Collider.hpp"
 #include "Proj.hpp"
-#include "Box2D.h"
-#include "Collision/b2Collision.h"
-#include "Dynamics/b2World.h"
-#include "Dynamics/b2Body.h"
-#include "Dynamics/b2ContactManager.h"
-#include "Common/b2Math.h"
-#include "Collision/Shapes/b2PolygonShape.h"
+#include "Box2D/Box2D.h"
+
 
 float timestamp2 = 0;
 Vector2i F1(100,100);
