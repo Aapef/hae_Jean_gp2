@@ -30,7 +30,7 @@ public:
 
 	~Proj() 
 	{
-		//delete this;
+		printf("destroy");
 	}
 
 	void updatecollider() 

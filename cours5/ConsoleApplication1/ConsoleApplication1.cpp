@@ -14,98 +14,37 @@
 #include <windows.h>
 
 float timestamp2 = 0;
-Vector2i F1(100,100);
-Vector2i F2(200, 200);
-Vector2i F3(300, 300);
-Vector2i F4(400, 400);
-Vector2i F5(500, 500);
-Vector2i F6(600, 600);
-Vector2i F7(700, 700);
 int currentminpos = 0;
-sf::Vector2f vec(100, 100);
+sf::Vector2f vec(70, 120);
 sf::RectangleShape shape(vec);
 float rot1;
 float rot2;
 bool p1dead = false;
 bool p2dead = false;
 sf::RectangleShape shape2(vec);
-
-sf::RectangleShape gun(Vector2f(100, 10));
-
-sf::RectangleShape gun2(Vector2f(100, 10));
+sf::RectangleShape gun(Vector2f(50, 100 * 1.2));
+sf::RectangleShape gun2(Vector2f(50 * 1.1, 100 * 1.4));
 std::list <Proj> Projectils;
 std::list<Boom> Boomlist;
 bool p1canshoot = true;
 bool p2canshoot = true;
 
 
-void DrawCurve(sf::RenderWindow &win, float timestamp)
-{
-	sf::VertexArray va(sf::LineStrip);
-	sf::Color red = sf::Color(255, 0, 0, 255);
-	sf::Color blue = sf::Color(0, 255, 0, 255);
-	int nb = 1920;
 
-	float stride = 1280.0 / (nb);
-
-	std::vector<Vector2f> points;
-
-	for (int j = 0; j < 8; j++) 
-	{
-		Vector2f v(j * 100, j * 100);
-		if (j == 1) { v.x = F1.x; v.y = F1.y;
-		}
-		if (j == 3) { v.x = F3.x; v.y = F3.y;
-		}
-		if (j == 5) { v.x = F5.x; v.y = F5.y;
-		}
-		if (j == 7) { v.x = F7.x; v.y = F7.y;
-		}
-		if (j == 2) {
-			v.x = F2.x; v.y = F2.y;
-		}
-		if (j == 4) {
-			v.x = F4.x; v.y = F4.y;
-		}
-		if (j == 6) {
-			v.x = F6.x; v.y = F6.y;
-		}
-		points.push_back(v);
-	}
-	float doo = true;
-	for (int i = 0; i < nb + 1; ++i) {
-		double ratio = 1.0 * i / nb;
-		double x = 0.0;
-		double y = 0.0;
-		sf::Color c = sf::Color::Red;
-
-
-		Vector2f pos = Lib::plot2(ratio, points);
-		x = pos.x;
-		y = pos.y;
-		sf::Vertex vertex(Vector2f(x, y), c);
-		va.append(vertex);
-		
-		if (ratio >= timestamp && doo == true) {
-			doo = false;
-			CircleShape shapee(10);
-			shapee.setFillColor(sf::Color::Green);
-			shapee.setPosition(Vector2f(x, y));
-			win.draw(shapee);
-			
-		}
-		if (timestamp2 >= 1) timestamp2 = 0;
-	}
-	win.draw(va);
-
+Vector2f Normalize(Vector2f N) {
+	float length = std::sqrt(N.x * N.x + N.y * N.y); 
+	N.x /= length;
+	N.y /= length;
+	return N;
 }
+
 
 
 int main()
 {
 	std::srand(GetTickCount());
-	gun.setOrigin(Vector2f(5, 5));
-	gun2.setOrigin(Vector2f(5, 5));
+	gun.setOrigin(Vector2f(gun.getSize().x/2, gun.getSize().y / 2 + 23));
+	gun2.setOrigin(Vector2f(gun2.getSize().x / 2, gun2.getSize().y / 2 +23));
 	SquareCollider WestWall(-100, 1080, 100, -2000);
 	SquareCollider NorthWall(0, -100, 2000, 100);
 	SquareCollider EastWall(1900, 1080, 100, -2000);
@@ -116,6 +55,16 @@ int main()
 	CenterWallShape.setFillColor(sf::Color::White);
 	CenterWallShape.setPosition(1920 / 2 - 200, 1080 / 2 - 200);
 
+	sf::Texture T34Hull;
+	if (!T34Hull.loadFromFile("tanks_0_6.png")){}
+	sf::Texture T34Turret;
+	if (!T34Turret.loadFromFile("tanks_0_2.png")) {}
+	sf::Texture PantherHull;
+	if (!PantherHull.loadFromFile("tanks_0_8.png")) {}
+	sf::Texture PantherTurret;
+	if (!PantherTurret.loadFromFile("tanks_0_4.png")) {}
+
+
 	sf::Font font;
 	if (!font.loadFromFile("arial.ttf"))
 	{
@@ -125,10 +74,15 @@ int main()
 	
 	shape.setPosition(0, 900);
 	shape2.setPosition(1720, 100);
-	gun.setFillColor(sf::Color::Red);
+	/*gun.setFillColor(sf::Color::Red);
 	gun2.setFillColor(sf::Color::Red);
 	shape.setFillColor(sf::Color::Green);
-	shape2.setFillColor(sf::Color::Blue);
+	shape2.setFillColor(sf::Color::Blue);*/
+
+	shape.setTexture(&T34Hull);
+	shape2.setTexture(&PantherHull);
+	gun.setTexture(&T34Turret);
+	gun2.setTexture(&PantherTurret);
 
 	sf::Clock clocky;
 	sf::Time appStart = clocky.getElapsedTime();
@@ -158,6 +112,8 @@ int main()
 		
 		}
 		window.clear();
+
+
 
 		//Mouvements
 
@@ -198,6 +154,9 @@ int main()
 				shape2.move(-4, 0);
 			}
 		}
+
+
+
 		//Ciblage
 
 		/*Vector2i mousepos = sf::Mouse::getPosition(window);
@@ -211,7 +170,7 @@ int main()
 			if ((sf::Joystick::getAxisPosition(0, Joystick::U) > 50 || sf::Joystick::getAxisPosition(0, Joystick::U) < -50) || (sf::Joystick::getAxisPosition(0, Joystick::V) > 50 || sf::Joystick::getAxisPosition(0, Joystick::V) < -50)) {
 				rot1 = 57.3 * atan2(sf::Joystick::getAxisPosition(0, Joystick::U), -sf::Joystick::getAxisPosition(0, Joystick::V)) - 90;
 				//if (gun.getPosition().y > mousepos.y) rot = -rot;
-				gun.setRotation(rot1);
+				gun.setRotation(rot1 + 90);
 
 			}
 			if (sf::Joystick::getAxisPosition(0, Joystick::Z)> 50 && p1canshoot == true)
@@ -230,7 +189,7 @@ int main()
 			if ((sf::Joystick::getAxisPosition(1, Joystick::U) > 50 || sf::Joystick::getAxisPosition(1, Joystick::U) < -50) || (sf::Joystick::getAxisPosition(1, Joystick::V) > 50 || sf::Joystick::getAxisPosition(1, Joystick::V) < -50)) {
 				rot2 = 57.3 * atan2(sf::Joystick::getAxisPosition(1, Joystick::U), -sf::Joystick::getAxisPosition(1, Joystick::V)) - 90;
 				//if (gun.getPosition().y > mousepos.y) rot = -rot;
-				gun2.setRotation(rot2);
+				gun2.setRotation(rot2 + 90);
 
 			}
 			if (sf::Joystick::getAxisPosition(1, Joystick::Z) > 50 && p2canshoot == true)
@@ -244,18 +203,23 @@ int main()
 			else if (sf::Joystick::getAxisPosition(1, Joystick::Z) < 50) p2canshoot = true;
 		}
 
-		gun.setPosition(Vector2f(shape.getPosition().x + 50, shape.getPosition().y + 50));
-		gun2.setPosition(Vector2f(shape2.getPosition().x + 50, shape2.getPosition().y + 50));
+		gun.setPosition(Vector2f(shape.getPosition().x + shape.getSize().x/2, shape.getPosition().y + shape.getSize().y/2 - 20));
+		gun2.setPosition(Vector2f(shape2.getPosition().x + shape2.getSize().x/2, shape2.getPosition().y + shape2.getSize().y/2 - 23));
 		for (Proj& zbleh : Projectils)
 		{
 			Vector2f dazonidaz = zbleh.shape.getPosition();
 			zbleh.shape.setPosition(zbleh.shape.getPosition() + zbleh.Direction);
 			zbleh.updatecollider();
 		}
+
+
+
 		//Update Colliders
 
 		TankCol.update(shape.getPosition().x, shape.getPosition().y, shape.getSize().x, shape.getSize().y);
 		Tank2Col.update(shape2.getPosition().x, shape2.getPosition().y, shape2.getSize().x, shape2.getSize().y);
+
+
 
 		//Collision Check
 
@@ -270,6 +234,8 @@ int main()
 		if (EastWall.CheckColliding(Tank2Col))shape2.setPosition(Tank2Col.PrevPos);
 		if (WestWall.CheckColliding(Tank2Col))shape2.setPosition(Tank2Col.PrevPos);
 		if (CenterWall.CheckColliding(Tank2Col))shape2.setPosition(Tank2Col.PrevPos);
+
+
 
 		//Proj Bouncing
 
@@ -396,7 +362,7 @@ int main()
 			}
 			else zbleh.timer = zbleh.timer + 1;
 
-			if (TankCol.CheckCollidingWithSphere(zbleh.collider)) {
+			if (TankCol.CheckCollidingWithSphere(zbleh.collider) && !p1dead) {
 				
 				Boom zbleh2(shape.getPosition(), sf::Color::Red, 20);
 				Boomlist.push_back(zbleh2);
@@ -409,7 +375,7 @@ int main()
 				Projectils.remove(zbleh);
 				break;
 			}
-			if (Tank2Col.CheckCollidingWithSphere(zbleh.collider)) {
+			if (Tank2Col.CheckCollidingWithSphere(zbleh.collider) && !p2dead) {
 				Boom zbleh2(shape2.getPosition(), sf::Color::Red, 20);
 				Boomlist.push_back(zbleh2);
 				Boom zbleh3(shape2.getPosition(), sf::Color::Red, 20);
@@ -423,6 +389,8 @@ int main()
 			}
 			if (zbleh.timer > 0) zbleh.timer = 0;
 		}
+
+
 
 		//Particles
 
@@ -438,10 +406,14 @@ int main()
 			}
 		}
 
+
+
 		//Update PrevPos
 
 		TankCol.PrevPos = shape.getPosition();
 		Tank2Col.PrevPos = shape2.getPosition();
+
+
 
 		//Render
 		
@@ -462,29 +434,6 @@ int main()
 			window.draw(zbleh.shape4);
 		}
 		window.display();
-
-		if (Keyboard::isKeyPressed(sf::Keyboard::F1)) {
-			F1 = sf::Mouse::getPosition(window);
-		}
-		if (Keyboard::isKeyPressed(sf::Keyboard::F2)) {
-			F2 = sf::Mouse::getPosition(window);
-		}
-		if (Keyboard::isKeyPressed(sf::Keyboard::F3)) {
-			F3 = sf::Mouse::getPosition(window);
-		}
-		if (Keyboard::isKeyPressed(sf::Keyboard::F4)) {
-			F4 = sf::Mouse::getPosition(window);
-		}
-		if (Keyboard::isKeyPressed(sf::Keyboard::F5)) {
-			F5 = sf::Mouse::getPosition(window);
-		}
-		if (Keyboard::isKeyPressed(sf::Keyboard::F6)) {
-			F6 = sf::Mouse::getPosition(window);
-		}
-		if (Keyboard::isKeyPressed(sf::Keyboard::F7)) {
-			F7 = sf::Mouse::getPosition(window);
-		}
-
 	}
 
 	return 0;

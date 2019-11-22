@@ -93,6 +93,7 @@ bool CheckColliding(SquareCollider other)
 	if (Collider.intersects(other.Collider)) return true;
 	else return false;
 	}
+
 float GetAngleOfCollision(SphereCollider other2)
 	{
 		if (Collider.contains(other2.a1) || Collider.contains(other2.a5)) { return 0; }
