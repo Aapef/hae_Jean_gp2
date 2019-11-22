@@ -1,5 +1,57 @@
-﻿  ConsoleApplication1.cpp
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(27): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
+﻿  pch.cpp
+  b2BroadPhase.cpp
+  b2CollideCircle.cpp
+  b2CollideEdge.cpp
+  b2CollidePolygon.cpp
+  b2Collision.cpp
+  b2Distance.cpp
+  b2DynamicTree.cpp
+  b2TimeOfImpact.cpp
+  b2ChainShape.cpp
+  b2CircleShape.cpp
+  b2EdgeShape.cpp
+  b2PolygonShape.cpp
+  b2BlockAllocator.cpp
+  b2Draw.cpp
+  b2Math.cpp
+  b2Settings.cpp
+  b2StackAllocator.cpp
+  b2Timer.cpp
+  b2Body.cpp
+  b2ContactManager.cpp
+  Génération de code en cours...
+  Compilation en cours...
+  b2Fixture.cpp
+  b2Island.cpp
+  b2World.cpp
+  b2WorldCallbacks.cpp
+  b2ChainAndCircleContact.cpp
+  b2ChainAndPolygonContact.cpp
+  b2CircleContact.cpp
+  b2Contact.cpp
+  b2ContactSolver.cpp
+  b2EdgeAndCircleContact.cpp
+  b2EdgeAndPolygonContact.cpp
+  b2PolygonAndCircleContact.cpp
+  b2PolygonContact.cpp
+  b2DistanceJoint.cpp
+  b2FrictionJoint.cpp
+  b2GearJoint.cpp
+  b2Joint.cpp
+  b2MotorJoint.cpp
+  b2MouseJoint.cpp
+  b2PrismaticJoint.cpp
+  Génération de code en cours...
+  Compilation en cours...
+  b2PulleyJoint.cpp
+  b2RevoluteJoint.cpp
+  b2RopeJoint.cpp
+  b2WeldJoint.cpp
+  b2WheelJoint.cpp
+  b2Rope.cpp
+  Génération de code en cours...
+  ConsoleApplication1.cpp
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(27): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
           with
           [
               T=float
@@ -8,12 +60,12 @@ d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(27): warning 
           [
               T=int
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(28): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(28): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(29): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(29): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
           with
           [
               T=float
@@ -22,12 +74,12 @@ d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(29): warning 
           [
               T=int
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(30): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(30): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(31): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(31): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
           with
           [
               T=float
@@ -36,12 +88,12 @@ d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(31): warning 
           [
               T=int
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(32): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(32): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(33): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(33): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
           with
           [
               T=float
@@ -50,12 +102,12 @@ d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(33): warning 
           [
               T=int
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(34): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(34): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(36): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(36): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
           with
           [
               T=float
@@ -64,17 +116,17 @@ d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(36): warning 
           [
               T=int
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(36): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(36): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(37): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(37): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(37): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(37): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
           with
           [
               T=float
@@ -83,7 +135,7 @@ d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(37): warning 
           [
               T=int
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(38): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(38): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
           with
           [
               T=float
@@ -92,17 +144,17 @@ d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(38): warning 
           [
               T=int
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(38): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(38): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(39): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(39): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(39): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(39): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
           with
           [
               T=float
@@ -111,7 +163,7 @@ d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(39): warning 
           [
               T=int
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(40): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(40): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
           with
           [
               T=float
@@ -120,17 +172,17 @@ d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(40): warning 
           [
               T=int
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(40): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(40): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(41): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(41): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(41): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(41): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
           with
           [
               T=float
@@ -139,7 +191,7 @@ d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(41): warning 
           [
               T=int
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(42): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(42): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
           with
           [
               T=float
@@ -148,17 +200,17 @@ d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(42): warning 
           [
               T=int
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(42): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(42): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(43): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(43): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(43): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(43): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
           with
           [
               T=float
@@ -167,7 +219,7 @@ d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(43): warning 
           [
               T=int
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(47): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(47): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
           with
           [
               T=float
@@ -176,12 +228,12 @@ d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(47): warning 
           [
               T=int
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(48): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(48): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(49): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(49): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
           with
           [
               T=float
@@ -190,12 +242,12 @@ d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(49): warning 
           [
               T=int
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(50): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(50): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(51): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(51): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
           with
           [
               T=float
@@ -204,12 +256,12 @@ d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(51): warning 
           [
               T=int
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(52): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(52): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(53): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(53): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
           with
           [
               T=float
@@ -218,12 +270,12 @@ d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(53): warning 
           [
               T=int
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(54): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(54): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(56): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(56): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
           with
           [
               T=float
@@ -232,17 +284,17 @@ d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(56): warning 
           [
               T=int
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(56): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(56): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(57): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(57): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(57): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(57): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
           with
           [
               T=float
@@ -251,7 +303,7 @@ d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(57): warning 
           [
               T=int
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(58): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(58): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
           with
           [
               T=float
@@ -260,17 +312,17 @@ d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(58): warning 
           [
               T=int
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(58): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(58): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(59): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(59): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(59): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(59): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
           with
           [
               T=float
@@ -279,7 +331,7 @@ d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(59): warning 
           [
               T=int
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(60): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(60): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
           with
           [
               T=float
@@ -288,17 +340,17 @@ d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(60): warning 
           [
               T=int
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(60): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(60): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(61): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(61): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(61): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(61): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
           with
           [
               T=float
@@ -307,7 +359,7 @@ d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(61): warning 
           [
               T=int
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(62): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(62): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
           with
           [
               T=float
@@ -316,17 +368,17 @@ d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(62): warning 
           [
               T=int
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(62): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(62): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(63): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(63): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=int
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(63): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(63): warning C4244: 'argument' : conversion de 'T' en 'T', perte possible de données
           with
           [
               T=float
@@ -335,23 +387,14 @@ d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(63): warning 
           [
               T=int
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(97): warning C4305: 'initialisation' : troncation de 'double' à 'float'
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\consoleapplication1.cpp(42): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\consoleapplication1.cpp(48): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\collider.hpp(97): warning C4305: 'initialisation' : troncation de 'double' à 'float'
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\consoleapplication1.cpp(42): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\consoleapplication1.cpp(48): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
           with
           [
               T=float
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\consoleapplication1.cpp(49): warning C4244: '=' : conversion de 'T' en 'T', perte possible de données
-          with
-          [
-              T=int
-          ]
-          and
-          [
-              T=float
-          ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\consoleapplication1.cpp(51): warning C4244: '=' : conversion de 'T' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\consoleapplication1.cpp(49): warning C4244: '=' : conversion de 'T' en 'T', perte possible de données
           with
           [
               T=int
@@ -360,7 +403,7 @@ d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\consoleapplication1.cpp(51
           [
               T=float
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\consoleapplication1.cpp(53): warning C4244: '=' : conversion de 'T' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\consoleapplication1.cpp(51): warning C4244: '=' : conversion de 'T' en 'T', perte possible de données
           with
           [
               T=int
@@ -369,7 +412,7 @@ d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\consoleapplication1.cpp(53
           [
               T=float
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\consoleapplication1.cpp(55): warning C4244: '=' : conversion de 'T' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\consoleapplication1.cpp(53): warning C4244: '=' : conversion de 'T' en 'T', perte possible de données
           with
           [
               T=int
@@ -378,7 +421,7 @@ d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\consoleapplication1.cpp(55
           [
               T=float
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\consoleapplication1.cpp(58): warning C4244: '=' : conversion de 'T' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\consoleapplication1.cpp(55): warning C4244: '=' : conversion de 'T' en 'T', perte possible de données
           with
           [
               T=int
@@ -387,7 +430,7 @@ d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\consoleapplication1.cpp(58
           [
               T=float
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\consoleapplication1.cpp(61): warning C4244: '=' : conversion de 'T' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\consoleapplication1.cpp(58): warning C4244: '=' : conversion de 'T' en 'T', perte possible de données
           with
           [
               T=int
@@ -396,7 +439,7 @@ d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\consoleapplication1.cpp(61
           [
               T=float
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\consoleapplication1.cpp(64): warning C4244: '=' : conversion de 'T' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\consoleapplication1.cpp(61): warning C4244: '=' : conversion de 'T' en 'T', perte possible de données
           with
           [
               T=int
@@ -405,32 +448,77 @@ d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\consoleapplication1.cpp(64
           [
               T=float
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\consoleapplication1.cpp(76): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\consoleapplication1.cpp(79): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\consoleapplication1.cpp(64): warning C4244: '=' : conversion de 'T' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\consoleapplication1.cpp(76): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\consoleapplication1.cpp(79): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=float
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\consoleapplication1.cpp(82): warning C4805: '==' : mélange risqué de type 'float' et de type 'bool' dans l'opération
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\consoleapplication1.cpp(86): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\consoleapplication1.cpp(82): warning C4805: '==' : mélange risqué de type 'float' et de type 'bool' dans l'opération
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\consoleapplication1.cpp(86): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=float
           ]
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\consoleapplication1.cpp(143): warning C4244: '+=' : conversion de 'double' en 'float', perte possible de données
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\consoleapplication1.cpp(144): warning C4305: '+=' : troncation de 'double' à 'float'
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\consoleapplication1.cpp(178): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\consoleapplication1.cpp(186): warning C4552: '+' : résultat de l'expression non utilisé
-d:\repo\hae_jean_gp2\cours5 box2d\consoleapplication1\consoleapplication1.cpp(187): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\consoleapplication1.cpp(143): warning C4244: '+=' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\consoleapplication1.cpp(144): warning C4305: '+=' : troncation de 'double' à 'float'
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\consoleapplication1.cpp(178): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\consoleapplication1.cpp(186): warning C4552: '+' : résultat de l'expression non utilisé
+c:\workspace\jean\hae_jean_gp2\cours5 box2d\consoleapplication1\consoleapplication1.cpp(187): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=float
           ]
-ConsoleApplication1.obj : error LNK2001: symbole externe non résolu "public: virtual class b2Shape * __thiscall b2PolygonShape::Clone(class b2BlockAllocator *)const " (?Clone@b2PolygonShape@@UBEPAVb2Shape@@PAVb2BlockAllocator@@@Z)
-ConsoleApplication1.obj : error LNK2001: symbole externe non résolu "public: virtual int __thiscall b2PolygonShape::GetChildCount(void)const " (?GetChildCount@b2PolygonShape@@UBEHXZ)
-ConsoleApplication1.obj : error LNK2019: symbole externe non résolu "public: void __thiscall b2PolygonShape::SetAsBox(float,float)" (?SetAsBox@b2PolygonShape@@QAEXMM@Z) référencé dans la fonction _main
-ConsoleApplication1.obj : error LNK2001: symbole externe non résolu "public: virtual bool __thiscall b2PolygonShape::TestPoint(struct b2Transform const &,struct b2Vec2 const &)const " (?TestPoint@b2PolygonShape@@UBE_NABUb2Transform@@ABUb2Vec2@@@Z)
-ConsoleApplication1.obj : error LNK2001: symbole externe non résolu "public: virtual bool __thiscall b2PolygonShape::RayCast(struct b2RayCastOutput *,struct b2RayCastInput const &,struct b2Transform const &,int)const " (?RayCast@b2PolygonShape@@UBE_NPAUb2RayCastOutput@@ABUb2RayCastInput@@ABUb2Transform@@H@Z)
-ConsoleApplication1.obj : error LNK2001: symbole externe non résolu "public: virtual void __thiscall b2PolygonShape::ComputeAABB(struct b2AABB *,struct b2Transform const &,int)const " (?ComputeAABB@b2PolygonShape@@UBEXPAUb2AABB@@ABUb2Transform@@H@Z)
-ConsoleApplication1.obj : error LNK2001: symbole externe non résolu "public: virtual void __thiscall b2PolygonShape::ComputeMass(struct b2MassData *,float)const " (?ComputeMass@b2PolygonShape@@UBEXPAUb2MassData@@M@Z)
-D:\Repo\hae_Jean_gp2\cours5 Box2d\ConsoleApplication1\Debug\ConsoleApplication1.exe : fatal error LNK1120: 7 externes non résolus
+ConsoleApplication1.obj : error LNK2019: symbole externe non résolu "__declspec(dllimport) public: __thiscall sf::Clock::Clock(void)" (__imp_??0Clock@sf@@QAE@XZ) référencé dans la fonction _main
+ConsoleApplication1.obj : error LNK2019: symbole externe non résolu "__declspec(dllimport) public: class sf::Time __thiscall sf::Clock::getElapsedTime(void)const " (__imp_?getElapsedTime@Clock@sf@@QBE?AVTime@2@XZ) référencé dans la fonction _main
+ConsoleApplication1.obj : error LNK2019: symbole externe non résolu "__declspec(dllimport) public: class sf::Time __thiscall sf::Clock::restart(void)" (__imp_?restart@Clock@sf@@QAE?AVTime@2@XZ) référencé dans la fonction _main
+ConsoleApplication1.obj : error LNK2019: symbole externe non résolu "__declspec(dllimport) public: __thiscall sf::String::String(char const *,class std::locale const &)" (__imp_??0String@sf@@QAE@PBDABVlocale@std@@@Z) référencé dans la fonction _main
+ConsoleApplication1.obj : error LNK2019: symbole externe non résolu "__declspec(dllimport) public: __thiscall sf::String::~String(void)" (__imp_??1String@sf@@QAE@XZ) référencé dans la fonction _main
+ConsoleApplication1.obj : error LNK2019: symbole externe non résolu "__declspec(dllimport) public: static bool __cdecl sf::Keyboard::isKeyPressed(enum sf::Keyboard::Key)" (__imp_?isKeyPressed@Keyboard@sf@@SA_NW4Key@12@@Z) référencé dans la fonction _main
+ConsoleApplication1.obj : error LNK2019: symbole externe non résolu "__declspec(dllimport) public: static bool __cdecl sf::Mouse::isButtonPressed(enum sf::Mouse::Button)" (__imp_?isButtonPressed@Mouse@sf@@SA_NW4Button@12@@Z) référencé dans la fonction _main
+ConsoleApplication1.obj : error LNK2019: symbole externe non résolu "__declspec(dllimport) public: static class sf::Vector2<int> __cdecl sf::Mouse::getPosition(class sf::Window const &)" (__imp_?getPosition@Mouse@sf@@SA?AV?$Vector2@H@2@ABVWindow@2@@Z) référencé dans la fonction _main
+ConsoleApplication1.obj : error LNK2019: symbole externe non résolu "__declspec(dllimport) public: __thiscall sf::VideoMode::VideoMode(unsigned int,unsigned int,unsigned int)" (__imp_??0VideoMode@sf@@QAE@III@Z) référencé dans la fonction _main
+ConsoleApplication1.obj : error LNK2019: symbole externe non résolu "__declspec(dllimport) public: void __thiscall sf::Window::close(void)" (__imp_?close@Window@sf@@QAEXXZ) référencé dans la fonction _main
+ConsoleApplication1.obj : error LNK2019: symbole externe non résolu "__declspec(dllimport) public: bool __thiscall sf::Window::isOpen(void)const " (__imp_?isOpen@Window@sf@@QBE_NXZ) référencé dans la fonction _main
+ConsoleApplication1.obj : error LNK2019: symbole externe non résolu "__declspec(dllimport) public: bool __thiscall sf::Window::pollEvent(class sf::Event &)" (__imp_?pollEvent@Window@sf@@QAE_NAAVEvent@2@@Z) référencé dans la fonction _main
+ConsoleApplication1.obj : error LNK2019: symbole externe non résolu "__declspec(dllimport) public: void __thiscall sf::Window::setVerticalSyncEnabled(bool)" (__imp_?setVerticalSyncEnabled@Window@sf@@QAEX_N@Z) référencé dans la fonction _main
+ConsoleApplication1.obj : error LNK2019: symbole externe non résolu "__declspec(dllimport) public: void __thiscall sf::Window::display(void)" (__imp_?display@Window@sf@@QAEXXZ) référencé dans la fonction _main
+ConsoleApplication1.obj : error LNK2019: symbole externe non résolu "__declspec(dllimport) public: void __thiscall sf::Transformable::setPosition(float,float)" (__imp_?setPosition@Transformable@sf@@QAEXMM@Z) référencé dans la fonction _main
+ConsoleApplication1.obj : error LNK2019: symbole externe non résolu "__declspec(dllimport) public: void __thiscall sf::Transformable::setPosition(class sf::Vector2<float> const &)" (__imp_?setPosition@Transformable@sf@@QAEXABV?$Vector2@M@2@@Z) référencé dans la fonction "public: __thiscall Proj::Proj(class sf::Vector2<float>,class sf::Vector2<float>)" (??0Proj@@QAE@V?$Vector2@M@sf@@0@Z)
+ConsoleApplication1.obj : error LNK2019: symbole externe non résolu "__declspec(dllimport) public: void __thiscall sf::Transformable::setRotation(float)" (__imp_?setRotation@Transformable@sf@@QAEXM@Z) référencé dans la fonction _main
+ConsoleApplication1.obj : error LNK2019: symbole externe non résolu "__declspec(dllimport) public: void __thiscall sf::Transformable::setOrigin(class sf::Vector2<float> const &)" (__imp_?setOrigin@Transformable@sf@@QAEXABV?$Vector2@M@2@@Z) référencé dans la fonction _main
+ConsoleApplication1.obj : error LNK2019: symbole externe non résolu "__declspec(dllimport) public: class sf::Vector2<float> const & __thiscall sf::Transformable::getPosition(void)const " (__imp_?getPosition@Transformable@sf@@QBEABV?$Vector2@M@2@XZ) référencé dans la fonction "public: void __thiscall Proj::updatecollider(void)" (?updatecollider@Proj@@QAEXXZ)
+ConsoleApplication1.obj : error LNK2019: symbole externe non résolu "__declspec(dllimport) public: void __thiscall sf::Transformable::move(float,float)" (__imp_?move@Transformable@sf@@QAEXMM@Z) référencé dans la fonction _main
+ConsoleApplication1.obj : error LNK2019: symbole externe non résolu "__declspec(dllimport) public: __thiscall sf::Color::Color(unsigned char,unsigned char,unsigned char,unsigned char)" (__imp_??0Color@sf@@QAE@EEEE@Z) référencé dans la fonction "void __cdecl DrawCurve(class sf::RenderWindow &,float)" (?DrawCurve@@YAXAAVRenderWindow@sf@@M@Z)
+ConsoleApplication1.obj : error LNK2019: symbole externe non résolu "__declspec(dllimport) public: __thiscall sf::Vertex::Vertex(class sf::Vector2<float> const &,class sf::Color const &)" (__imp_??0Vertex@sf@@QAE@ABV?$Vector2@M@1@ABVColor@1@@Z) référencé dans la fonction "void __cdecl DrawCurve(class sf::RenderWindow &,float)" (?DrawCurve@@YAXAAVRenderWindow@sf@@M@Z)
+ConsoleApplication1.obj : error LNK2019: symbole externe non résolu "__declspec(dllimport) public: __thiscall sf::VertexArray::VertexArray(enum sf::PrimitiveType,unsigned int)" (__imp_??0VertexArray@sf@@QAE@W4PrimitiveType@1@I@Z) référencé dans la fonction "void __cdecl DrawCurve(class sf::RenderWindow &,float)" (?DrawCurve@@YAXAAVRenderWindow@sf@@M@Z)
+ConsoleApplication1.obj : error LNK2019: symbole externe non résolu "__declspec(dllimport) public: void __thiscall sf::VertexArray::append(class sf::Vertex const &)" (__imp_?append@VertexArray@sf@@QAEXABVVertex@2@@Z) référencé dans la fonction "void __cdecl DrawCurve(class sf::RenderWindow &,float)" (?DrawCurve@@YAXAAVRenderWindow@sf@@M@Z)
+ConsoleApplication1.obj : error LNK2019: symbole externe non résolu "__declspec(dllimport) public: virtual __thiscall sf::VertexArray::~VertexArray(void)" (__imp_??1VertexArray@sf@@UAE@XZ) référencé dans la fonction "void __cdecl DrawCurve(class sf::RenderWindow &,float)" (?DrawCurve@@YAXAAVRenderWindow@sf@@M@Z)
+ConsoleApplication1.obj : error LNK2019: symbole externe non résolu "__declspec(dllimport) public: void __thiscall sf::Shape::setFillColor(class sf::Color const &)" (__imp_?setFillColor@Shape@sf@@QAEXABVColor@2@@Z) référencé dans la fonction "public: __thiscall Proj::Proj(class sf::Vector2<float>,class sf::Vector2<float>)" (??0Proj@@QAE@V?$Vector2@M@sf@@0@Z)
+ConsoleApplication1.obj : error LNK2019: symbole externe non résolu "__declspec(dllimport) public: __thiscall sf::CircleShape::CircleShape(float,unsigned int)" (__imp_??0CircleShape@sf@@QAE@MI@Z) référencé dans la fonction "public: __thiscall Proj::Proj(class sf::Vector2<float>,class sf::Vector2<float>)" (??0Proj@@QAE@V?$Vector2@M@sf@@0@Z)
+ConsoleApplication1.obj : error LNK2019: symbole externe non résolu "__declspec(dllimport) public: void __thiscall sf::CircleShape::setRadius(float)" (__imp_?setRadius@CircleShape@sf@@QAEXM@Z) référencé dans la fonction "public: __thiscall Proj::Proj(class sf::Vector2<float>,class sf::Vector2<float>)" (??0Proj@@QAE@V?$Vector2@M@sf@@0@Z)
+ConsoleApplication1.obj : error LNK2019: symbole externe non résolu "__declspec(dllimport) public: virtual __thiscall sf::CircleShape::~CircleShape(void)" (__imp_??1CircleShape@sf@@UAE@XZ) référencé dans la fonction __unwindfunclet$??0Proj@@QAE@V?$Vector2@M@sf@@0@Z$0
+ConsoleApplication1.obj : error LNK2019: symbole externe non résolu "__declspec(dllimport) public: __thiscall sf::CircleShape::CircleShape(class sf::CircleShape const &)" (__imp_??0CircleShape@sf@@QAE@ABV01@@Z) référencé dans la fonction "public: __thiscall Proj::Proj(class Proj const &)" (??0Proj@@QAE@ABV0@@Z)
+ConsoleApplication1.obj : error LNK2019: symbole externe non résolu "__declspec(dllimport) public: __thiscall sf::Font::Font(void)" (__imp_??0Font@sf@@QAE@XZ) référencé dans la fonction _main
+ConsoleApplication1.obj : error LNK2019: symbole externe non résolu "__declspec(dllimport) public: __thiscall sf::Font::~Font(void)" (__imp_??1Font@sf@@QAE@XZ) référencé dans la fonction _main
+ConsoleApplication1.obj : error LNK2019: symbole externe non résolu "__declspec(dllimport) public: bool __thiscall sf::Font::loadFromFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (__imp_?loadFromFile@Font@sf@@QAE_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z) référencé dans la fonction _main
+ConsoleApplication1.obj : error LNK2019: symbole externe non résolu "__declspec(dllimport) public: __thiscall sf::RectangleShape::RectangleShape(class sf::Vector2<float> const &)" (__imp_??0RectangleShape@sf@@QAE@ABV?$Vector2@M@1@@Z) référencé dans la fonction "void __cdecl `dynamic initializer for 'gun''(void)" (??__Egun@@YAXXZ)
+ConsoleApplication1.obj : error LNK2019: symbole externe non résolu "__declspec(dllimport) public: virtual __thiscall sf::RectangleShape::~RectangleShape(void)" (__imp_??1RectangleShape@sf@@UAE@XZ) référencé dans la fonction "void __cdecl `dynamic atexit destructor for 'gun''(void)" (??__Fgun@@YAXXZ)
+ConsoleApplication1.obj : error LNK2019: symbole externe non résolu "__declspec(dllimport) public: void __thiscall sf::RenderTarget::clear(class sf::Color const &)" (__imp_?clear@RenderTarget@sf@@QAEXABVColor@2@@Z) référencé dans la fonction _main
+ConsoleApplication1.obj : error LNK2019: symbole externe non résolu "__declspec(dllimport) public: void __thiscall sf::RenderTarget::draw(class sf::Drawable const &,class sf::RenderStates const &)" (__imp_?draw@RenderTarget@sf@@QAEXABVDrawable@2@ABVRenderStates@2@@Z) référencé dans la fonction "void __cdecl DrawCurve(class sf::RenderWindow &,float)" (?DrawCurve@@YAXAAVRenderWindow@sf@@M@Z)
+ConsoleApplication1.obj : error LNK2019: symbole externe non résolu "__declspec(dllimport) public: __thiscall sf::RenderWindow::RenderWindow(class sf::VideoMode,class sf::String const &,unsigned int,struct sf::ContextSettings const &)" (__imp_??0RenderWindow@sf@@QAE@VVideoMode@1@ABVString@1@IABUContextSettings@1@@Z) référencé dans la fonction _main
+ConsoleApplication1.obj : error LNK2019: symbole externe non résolu "__declspec(dllimport) public: virtual __thiscall sf::RenderWindow::~RenderWindow(void)" (__imp_??1RenderWindow@sf@@UAE@XZ) référencé dans la fonction _main
+ConsoleApplication1.obj : error LNK2001: symbole externe non résolu "__declspec(dllimport) public: static class sf::RenderStates const sf::RenderStates::Default" (__imp_?Default@RenderStates@sf@@2V12@B)
+ConsoleApplication1.obj : error LNK2001: symbole externe non résolu "__declspec(dllimport) public: static class sf::Color const sf::Color::White" (__imp_?White@Color@sf@@2V12@B)
+ConsoleApplication1.obj : error LNK2001: symbole externe non résolu "__declspec(dllimport) public: static class sf::Color const sf::Color::Red" (__imp_?Red@Color@sf@@2V12@B)
+ConsoleApplication1.obj : error LNK2001: symbole externe non résolu "__declspec(dllimport) public: static class sf::Color const sf::Color::Green" (__imp_?Green@Color@sf@@2V12@B)
+C:\WORKSPACE\Jean\hae_Jean_gp2\cours5 Box2d\ConsoleApplication1\Debug\ConsoleApplication1.exe : fatal error LNK1120: 43 externes non résolus

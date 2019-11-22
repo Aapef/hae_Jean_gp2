@@ -11,7 +11,7 @@
 #include "Lib.hpp"
 #include "Collider.hpp"
 #include "Proj.hpp"
-#include "Box2D/Box2D.h"
+#include <Box2D/Box2D.h>
 
 
 float timestamp2 = 0;
@@ -96,21 +96,21 @@ void DrawCurve(sf::RenderWindow &win, float timestamp)
 
 int main()
 {
-	b2Vec2 gravity(0.0f, 0.0f);
+	/*b2Vec2 gravity(0.0f, 0.0f);
 	b2World world(gravity);	
 	b2BodyDef groundBodyDef;
 	groundBodyDef.position.Set(0.0f, -10.0f);
 	b2Body* groundBody = world.CreateBody(&groundBodyDef);
 	b2PolygonShape groundBox;
-	groundBox.SetAsBox(50.0f, 10.0f);
+	groundBox.SetAsBox(50.0f, 10.0f);*/
 	
 	
 	gun.setOrigin(Vector2f(5, 5));
 
-	b2PolygonShape WestWall;
+	/*b2PolygonShape WestWall;
 	WestWall.SetAsBox(100.0f, 2000.0f);
 	b2BodyDef WestBody;
-	WestBody.position.Set(-100.0f, 1080.0f);
+	WestBody.position.Set(-100.0f, 1080.0f);*/
 
 	/*SquareCollider WestWall(-100, 1080, 100, -2000);
 	SquareCollider NorthWall(0, -100, 2000, 100);
@@ -199,7 +199,7 @@ int main()
 		}
 		//Update Colliders
 
-		groundBodyDef.position.Set(shape.getPosition().x, shape.getPosition().y);
+		//groundBodyDef.position.Set(shape.getPosition().x, shape.getPosition().y);
 
 /*		TankCol.update(shape.getPosition().x, shape.getPosition().y, shape.getSize().x, shape.getSize().y);
 
