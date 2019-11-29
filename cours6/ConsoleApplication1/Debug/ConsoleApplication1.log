@@ -1,6 +1,6 @@
 ﻿  ConsoleApplication1.cpp
-c:\workspace\jean\hae_jean_gp2\cours6\consoleapplication1\consoleapplication1.cpp(153): warning C4244: '+=' : conversion de 'double' en 'float', perte possible de données
-c:\workspace\jean\hae_jean_gp2\cours6\consoleapplication1\consoleapplication1.cpp(154): warning C4305: '+=' : troncation de 'double' à 'float'
-c:\workspace\jean\hae_jean_gp2\cours6\consoleapplication1\consoleapplication1.cpp(181): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
-c:\workspace\jean\hae_jean_gp2\cours6\consoleapplication1\consoleapplication1.cpp(182): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours6\consoleapplication1\consoleapplication1.cpp(247): warning C4244: '+=' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours6\consoleapplication1\consoleapplication1.cpp(248): warning C4305: '+=' : troncation de 'double' à 'float'
+c:\workspace\jean\hae_jean_gp2\cours6\consoleapplication1\consoleapplication1.cpp(275): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours6\consoleapplication1\consoleapplication1.cpp(276): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
   ConsoleApplication1.vcxproj -> C:\WORKSPACE\Jean\hae_Jean_gp2\cours6\ConsoleApplication1\Debug\ConsoleApplication1.exe

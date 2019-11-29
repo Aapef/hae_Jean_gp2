@@ -7,12 +7,46 @@
 #include <SFML/System/FileInputStream.hpp>
 #include <math.h>
 #include "Lib.hpp"
+#include <sys/stat.h>
 
 float ttime = 0.0f;
 static sf::Shader * simpleShader = nullptr;
 static sf::Shader * redShader = nullptr;
 static sf::Shader * bloomShader = nullptr;
 static sf::Shader * blurShader = nullptr;
+static char data[1024];
+
+static void readScript() 
+{
+	FILE * f = nullptr;
+	auto err = fopen_s(&f, "res/scriptTortue.txt", "r");
+	if (f != nullptr) {
+		memset(data, 0, 1024);
+		fread(data, 2014, 1, f);
+		fclose(f);
+	}
+	else {
+		printf("cannot read file %s %d\n", "res/scriptTortue.txt", err);
+	}
+}
+
+enum TurtleCommand {
+	AV,
+	REC,
+	GROSSI,
+	R45,
+	L45,
+};
+static std::vector<TurtleCommand> cmd;
+
+bool startswith(const char* a0, const char* a1) 
+{
+	if (*a0 == 0 && *a1 != 0) return false;
+	if (*a1 == 0) return true;
+	if (*a0 != *a1) return false;
+	else return(startswith(a0 + 1, a1 + 1));
+}
+
 
 class Turtle : public sf::ConvexShape 
 {
@@ -106,10 +140,67 @@ int currentminpos = 0;
 sf::Vector2f vec(100, 100);
 sf::RectangleShape shape(vec);
 sf::Vector2i projs;
+static void GETORDER66()
+{
+	char * cur = data;
 
+	bool doContinue = true;
+	while (doContinue) {
+		if (*cur == 0 || cur == nullptr) break;
+		else {
+			if (startswith(cur, "AV")) {
+				cmd.push_back(AV);
+			}
+			else if (startswith(cur, "REC")) {
+				cmd.push_back(REC);
+			}
+			else if (startswith(cur, "GROSSI")) {
+				cmd.push_back(GROSSI);
+			}
+			else if (startswith(cur, "R45")) {
+				cmd.push_back(R45);
+			}
+			else if (startswith(cur, "L45")) {
+				cmd.push_back(L45);
+			}
+			cur = strstr(cur, " ");
+			if (!cur) break;
+			else cur++;
+		
+		}
+	}
+
+}
+
+void EXECUTEORDER66() {
+	 
+	 
+		TurtleCommand c = cmd[0];
+		if (c == AV) {
+			translateX(-32); plotTurtle(); printf("av\n");
+		}
+		else if (c == REC) {
+			translateX(32); plotTurtle(); printf("rec\n");
+		}
+		else if (c == GROSSI) {
+			scaleX(2.0); plotTurtle(); printf("grossi\n");
+		}
+		else if (c == L45) {
+			rotate(45); plotTurtle(); printf("l45\n");
+		}
+		else if (c == R45) {
+			rotate(-45); plotTurtle(); printf("r45\n");
+		}
+		cmd.erase(cmd.begin());
+	
+}
 
 int main()
 {
+	struct stat fileInfo;
+	stat("res/scriptTortue.txt", &fileInfo);
+	auto a = fileInfo.st_mtime;
+	readScript();
 	bool dojump = false;
 	sf::Font font;
 	sf::Texture text;
@@ -131,8 +222,6 @@ int main()
 		// erreur...
 	}
 	sf::RenderWindow window(sf::VideoMode(1920, 1080), "SFML works!");
-
-
 	shape.setPosition(0, 900);
 	shape.setFillColor(sf::Color::White);
 
@@ -142,17 +231,22 @@ int main()
 	float timestamp = 0;
 	int timer = 0;
 	int io = 1;
-
 	startTransforms();
 	plotTurtle();
-
+	GETORDER66();
 	while (window.isOpen())
 	{
+		stat("res/scriptTortue.txt", &fileInfo);
+		if (a != fileInfo.st_mtime) {
+			a = fileInfo.st_mtime;
+			readScript();
+			GETORDER66();
+		}
 		if (timestamp <= 0 && io == -1) io = 1;
 		if (timestamp >= 250 / 50 && io == 1) io = -1;
 		timestamp += io * 0.05;
 		timestamp2 += 0.01;
-
+		if (cmd.size() > 0) EXECUTEORDER66();
 		clocky.restart();
 		sf::Event event;
 		while (window.pollEvent(event))
