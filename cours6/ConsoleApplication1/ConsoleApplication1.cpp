@@ -14,99 +14,110 @@ static sf::Shader * redShader = nullptr;
 static sf::Shader * bloomShader = nullptr;
 static sf::Shader * blurShader = nullptr;
 
+class Turtle : public sf::ConvexShape 
+{
+public : 
+	sf::Transform m_Trs;
+	Turtle() : sf::ConvexShape(3) 
+	{
+		setFillColor(sf::Color(255, 200, 50));
+		setOutlineThickness(2);
+		setOutlineColor(sf::Color(30, 30, 30));
+
+		setPoint(0, Vector2f(-24, 0));
+		setPoint(1, Vector2f(24, -16));
+		setPoint(2, Vector2f(24, 16));
+	}
+
+	void setTransform(sf::Transform trs) {
+		m_Trs = trs;
+	}
+};
+
+static sf::Transform s_Initial;
+static std::vector<sf::Transform> s_Trs;
+static std::vector<Turtle*> s_Turtles;
+
+static void startTransforms() {
+	s_Initial = Transform::Identity;
+	s_Initial.translate(64, 64);
+	s_Initial.rotate(180);
+}
+
+static void translateX(float dx) {
+	sf::Transform res;
+	res.translate(dx, 0);
+	s_Trs.push_back(res);
+}
+
+static void translateY(float dy) {
+	sf::Transform res;
+	res.translate(0, dy);
+	s_Trs.push_back(res);
+}
+
+static void rotate(float d) {
+	sf::Transform res;
+	res.rotate(d);
+	s_Trs.push_back(res);
+}
+
+static void scaleX(float dx) {
+	sf::Transform res;
+	res.scale(dx, dx);
+	s_Trs.push_back(res);
+}
+
+static void scaleY(float dy) {
+	sf::Transform res;
+	res.scale(dy, dy);
+	s_Trs.push_back(res);
+}
+
+static void computeTransform(sf::Transform & result, int step = -1) {
+	sf::Transform inter;
+	inter.combine(s_Initial);
+	if (step <= -1) {
+		for (sf::Transform t : s_Trs) {
+			inter = inter.combine(t);
+		}
+	}
+	else {
+		step--;
+		for (sf::Transform t : s_Trs) {
+			inter = inter.combine(t);
+			if(step <=0)break;
+		}
+	}
+	result = inter;
+}
+
+void plotTurtle() 
+{
+	sf::Transform cur;
+	computeTransform(cur, s_Trs.size() - 1);
+	Turtle* t = new Turtle();
+	t->setTransform(cur);
+	s_Turtles.push_back(t);
+}
+
 float timestamp2 = 0;
-Vector2i F1(100,100);
-Vector2i F2(200, 200);
-Vector2i F3(300, 300);
-Vector2i F4(400, 400);
-Vector2i F5(500, 500);
-Vector2i F6(600, 600);
-Vector2i F7(700, 700);
 int currentminpos = 0;
 sf::Vector2f vec(100, 100);
 sf::RectangleShape shape(vec);
 sf::Vector2i projs;
 
-void DrawCurve(sf::RenderWindow &win, float timestamp)
-{
-	sf::VertexArray va(sf::LineStrip);
-	sf::Color red = sf::Color(255, 0, 0, 255);
-	sf::Color blue = sf::Color(0, 255, 0, 255);
-	int nb = 1920;
-
-	float stride = 1280.0 / (nb);
-
-	std::vector<Vector2f> points;
-
-	for (int j = 0; j < 8; j++) 
-	{
-		Vector2f v(j * 100, j * 100);
-		if (j == 1) { v.x = F1.x; v.y = F1.y;
-		}
-		if (j == 3) { v.x = F3.x; v.y = F3.y;
-		}
-		if (j == 5) { v.x = F5.x; v.y = F5.y;
-		}
-		if (j == 7) { v.x = F7.x; v.y = F7.y;
-		}
-		if (j == 2) {
-			v.x = F2.x; v.y = F2.y;
-		}
-		if (j == 4) {
-			v.x = F4.x; v.y = F4.y;
-		}
-		if (j == 6) {
-			v.x = F6.x; v.y = F6.y;
-		}
-		points.push_back(v);
-	}
-	float doo = true;
-	for (int i = 0; i < nb + 1; ++i) {
-		double ratio = 1.0 * i / nb;
-		double x = 0.0;
-		double y = 0.0;
-		sf::Color c = sf::Color::Red;
-
-
-		Vector2f pos = Lib::plot2(ratio, points);
-		x = pos.x;
-		y = pos.y;
-		sf::Vertex vertex(Vector2f(x, y), c);
-		va.append(vertex);
-		
-		if (ratio >= timestamp && doo == true) {
-			doo = false;
-			CircleShape shapee(10);
-			shapee.setFillColor(sf::Color::Green);
-			shapee.setPosition(Vector2f(x, y));
-			win.draw(shapee);
-			
-		}
-		if (timestamp2 >= 1) timestamp2 = 0;
-	}
-	win.draw(va);
-
-}
-
-void RenderProjs() 
-{
-	/*for each(Vector2i ver in projs) 
-	{
-		;
-	}*/
-}
 
 int main()
 {
 	bool dojump = false;
 	sf::Font font;
 	sf::Texture text;
-
 	if (!sf::Shader::isAvailable()) {
 		printf("no shader available\n");
 	}
 
-	if (! text.loadFromFile("res/tanks_0_6.png")) {
+	if (!text.loadFromFile("res/tanks_0_6.png")) {
 		printf("failed to load texture");
 	}
 	shape.setTexture(&text);
@@ -120,8 +131,8 @@ int main()
 		// erreur...
 	}
 	sf::RenderWindow window(sf::VideoMode(1920, 1080), "SFML works!");
-	
-	
+
+
 	shape.setPosition(0, 900);
 	shape.setFillColor(sf::Color::White);
 
@@ -132,43 +143,59 @@ int main()
 	int timer = 0;
 	int io = 1;
 
+	startTransforms();
+	plotTurtle();
+
 	while (window.isOpen())
 	{
 		if (timestamp <= 0 && io == -1) io = 1;
 		if (timestamp >= 250 / 50 && io == 1) io = -1;
 		timestamp += io * 0.05;
 		timestamp2 += 0.01;
-		
+
 		clocky.restart();
 		sf::Event event;
 		while (window.pollEvent(event))
 		{
 			if (event.type == sf::Event::Closed)
 				window.close();
-		
+				switch (event.type)
+				{
+						case sf::Event::KeyReleased:
+						{
+							if (event.key.code == sf::Keyboard::Space)
+								{
+								startTransforms();
+
+								sf::Transform trs;
+								computeTransform(trs);
+
+								for (Turtle *t : s_Turtles) delete t;
+								s_Turtles.clear();
+
+								Turtle* t = new Turtle();
+								t->setTransform(trs);
+								s_Turtles.push_back(t);
+							}
+							auto delta = 32;
+							if (event.key.code == sf::Keyboard::F1) { translateX(delta); plotTurtle(); }
+							if (event.key.code == sf::Keyboard::F2) { translateX(-delta); plotTurtle(); }
+							if (event.key.code == sf::Keyboard::F3) { rotate(180); plotTurtle(); }
+							if (event.key.code == sf::Keyboard::F4) { rotate(45); plotTurtle(); }
+							if (event.key.code == sf::Keyboard::F6) { scaleX(0.5); plotTurtle(); }
+							if (event.key.code == sf::Keyboard::F7) { scaleX(2.0); plotTurtle(); }
+							if (event.key.code == sf::Keyboard::F8) { scaleY(0.5); plotTurtle(); }
+							if (event.key.code == sf::Keyboard::F9) { scaleY(2.0); plotTurtle(); }
+						}
+				}
 		}
 		window.clear();
 
-		//DrawCurve(window, timestamp2);
-
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) 
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 		{
-			//projs.add(shape.getPosition().x + 50, shape.getPosition().y + 50);
-		}
 
-		RenderProjs();
-
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) /*&& dojump == false*/) 
-		{
-			/*dojump = true;
-			timer = 0;*/
 			shape.move(0, -5);
 		}
-		/*if (dojump) {
-			shape.setPosition(shape.getPosition().x,-(((-(1 / 2)*(-9.8f)*(timer*timer)/400) + (100 * std::sin(0.45/2 * timer)))-800));
-			timer = timer + 1;
-			if (timer == 20) dojump = false;
-		}*/
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
 		{
 			shape.move(0, 5);
@@ -182,45 +209,14 @@ int main()
 			shape.move(2, 0);
 		}
 		window.draw(shape, simpleShader);
+		for (Turtle *i : s_Turtles) {
+			window.draw(*i, i->m_Trs);
+		}
 		window.display();
 
 		simpleShader->setUniform("time", ttime);
 		ttime = ttime + 0.1f;
-		/*sf::Text textou;		
-		sf::Time f = clocky.getElapsedTime();
-		float ff = f.asMicroseconds();
-		float i = 1000000/ ff;
-		textou.setFont(font);
-		textou.setString("FPS : " + std::to_string(i));
-		textou.setCharacterSize(24);
-		textou.setFillColor(sf::Color::Red);
-		window.clear();
-		window.draw(textou);
-		window.display();*/
-
-		if (Keyboard::isKeyPressed(sf::Keyboard::F1)) {
-			F1 = sf::Mouse::getPosition(window);
-		}
-		if (Keyboard::isKeyPressed(sf::Keyboard::F2)) {
-			F2 = sf::Mouse::getPosition(window);
-		}
-		if (Keyboard::isKeyPressed(sf::Keyboard::F3)) {
-			F3 = sf::Mouse::getPosition(window);
-		}
-		if (Keyboard::isKeyPressed(sf::Keyboard::F4)) {
-			F4 = sf::Mouse::getPosition(window);
-		}
-		if (Keyboard::isKeyPressed(sf::Keyboard::F5)) {
-			F5 = sf::Mouse::getPosition(window);
-		}
-		if (Keyboard::isKeyPressed(sf::Keyboard::F6)) {
-			F6 = sf::Mouse::getPosition(window);
-		}
-		if (Keyboard::isKeyPressed(sf::Keyboard::F7)) {
-			F7 = sf::Mouse::getPosition(window);
-		}
-
+		
 	}
-
 	return 0;
 }
