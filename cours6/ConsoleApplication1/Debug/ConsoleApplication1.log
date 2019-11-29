@@ -1,0 +1,85 @@
+﻿  ConsoleApplication1.cpp
+c:\workspace\jean\hae_jean_gp2\cours6\consoleapplication1\consoleapplication1.cpp(37): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours6\consoleapplication1\consoleapplication1.cpp(43): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\jean\hae_jean_gp2\cours6\consoleapplication1\consoleapplication1.cpp(44): warning C4244: '=' : conversion de 'T' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+c:\workspace\jean\hae_jean_gp2\cours6\consoleapplication1\consoleapplication1.cpp(46): warning C4244: '=' : conversion de 'T' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+c:\workspace\jean\hae_jean_gp2\cours6\consoleapplication1\consoleapplication1.cpp(48): warning C4244: '=' : conversion de 'T' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+c:\workspace\jean\hae_jean_gp2\cours6\consoleapplication1\consoleapplication1.cpp(50): warning C4244: '=' : conversion de 'T' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+c:\workspace\jean\hae_jean_gp2\cours6\consoleapplication1\consoleapplication1.cpp(53): warning C4244: '=' : conversion de 'T' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+c:\workspace\jean\hae_jean_gp2\cours6\consoleapplication1\consoleapplication1.cpp(56): warning C4244: '=' : conversion de 'T' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+c:\workspace\jean\hae_jean_gp2\cours6\consoleapplication1\consoleapplication1.cpp(59): warning C4244: '=' : conversion de 'T' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+c:\workspace\jean\hae_jean_gp2\cours6\consoleapplication1\consoleapplication1.cpp(71): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours6\consoleapplication1\consoleapplication1.cpp(74): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\jean\hae_jean_gp2\cours6\consoleapplication1\consoleapplication1.cpp(77): warning C4805: '==' : mélange risqué de type 'float' et de type 'bool' dans l'opération
+c:\workspace\jean\hae_jean_gp2\cours6\consoleapplication1\consoleapplication1.cpp(81): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\jean\hae_jean_gp2\cours6\consoleapplication1\consoleapplication1.cpp(139): warning C4244: '+=' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\cours6\consoleapplication1\consoleapplication1.cpp(140): warning C4305: '+=' : troncation de 'double' à 'float'
+  ConsoleApplication1.vcxproj -> C:\WORKSPACE\Jean\hae_Jean_gp2\cours6\ConsoleApplication1\Debug\ConsoleApplication1.exe

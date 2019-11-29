@@ -43,8 +43,8 @@ Vector2f Normalize(Vector2f N) {
 int main()
 {
 	std::srand(GetTickCount());
-	gun.setOrigin(Vector2f(gun.getSize().x/2, gun.getSize().y / 2 + 23));
-	gun2.setOrigin(Vector2f(gun2.getSize().x / 2, gun2.getSize().y / 2 +23));
+	gun.setOrigin(Vector2f(gun.getSize().x/2, gun.getSize().y / 2 + 30));
+	gun2.setOrigin(Vector2f(gun2.getSize().x / 2, gun2.getSize().y / 2 +40));
 	SquareCollider WestWall(-100, 1080, 100, -2000);
 	SquareCollider NorthWall(0, -100, 2000, 100);
 	SquareCollider EastWall(1900, 1080, 100, -2000);
@@ -188,7 +188,6 @@ int main()
 
 			if ((sf::Joystick::getAxisPosition(1, Joystick::U) > 50 || sf::Joystick::getAxisPosition(1, Joystick::U) < -50) || (sf::Joystick::getAxisPosition(1, Joystick::V) > 50 || sf::Joystick::getAxisPosition(1, Joystick::V) < -50)) {
 				rot2 = 57.3 * atan2(sf::Joystick::getAxisPosition(1, Joystick::U), -sf::Joystick::getAxisPosition(1, Joystick::V)) - 90;
-				//if (gun.getPosition().y > mousepos.y) rot = -rot;
 				gun2.setRotation(rot2 + 90);
 
 			}
@@ -203,8 +202,8 @@ int main()
 			else if (sf::Joystick::getAxisPosition(1, Joystick::Z) < 50) p2canshoot = true;
 		}
 
-		gun.setPosition(Vector2f(shape.getPosition().x + shape.getSize().x/2, shape.getPosition().y + shape.getSize().y/2 - 20));
-		gun2.setPosition(Vector2f(shape2.getPosition().x + shape2.getSize().x/2, shape2.getPosition().y + shape2.getSize().y/2 - 23));
+		gun.setPosition(Vector2f(shape.getPosition().x + shape.getSize().x/2, shape.getPosition().y + shape.getSize().y/2 -10));
+		gun2.setPosition(Vector2f(shape2.getPosition().x + shape2.getSize().x/2, shape2.getPosition().y + shape2.getSize().y/2 ));
 		for (Proj& zbleh : Projectils)
 		{
 			Vector2f dazonidaz = zbleh.shape.getPosition();
