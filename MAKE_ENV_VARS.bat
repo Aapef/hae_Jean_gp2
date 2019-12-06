@@ -1,3 +1,3 @@
 SETX BOX2D_DIR "C:\WORKSPACE\Jean\hae_Jean_gp2\Box2D-master"
-SETX SFML_DIR "C:\WORKSPACE\Jean\hae_Jean_gp2\SFML"
+SETX SFML_DIR "C:\WORKSPACE\Jean\hae_Jean_gp2\SFML\SFML-2.5.1"
 PAUSE

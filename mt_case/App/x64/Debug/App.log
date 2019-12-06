@@ -1,0 +1,7 @@
+﻿  App.cpp
+c:\workspace\jean\hae_jean_gp2\mt_case\app\app.cpp(446): fatal error C1010: fin de fichier inattendue lors de la recherche d'un en-tête précompilé. N'auriez-vous pas oublié d'ajouter '#include "pch.h"' à votre source ?
+  Game.cpp
+c:\workspace\jean\hae_jean_gp2\mt_case\app\game.cpp(22): fatal error C1010: fin de fichier inattendue lors de la recherche d'un en-tête précompilé. N'auriez-vous pas oublié d'ajouter '#include "pch.h"' à votre source ?
+  Lib.cpp
+c:\workspace\jean\hae_jean_gp2\mt_case\app\lib.cpp(1): fatal error C1083: Impossible d'ouvrir le fichier en-tête précompilé : 'x64\Debug\App.pch' : No such file or directory
+  Génération de code en cours...

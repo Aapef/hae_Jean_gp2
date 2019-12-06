@@ -1,0 +1,84 @@
+﻿  App.cpp
+c:\workspace\jean\hae_jean_gp2\mt_case\app\entity.hpp(66): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case\app\entity.hpp(67): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case\app\entity.hpp(85): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case\app\entity.hpp(85): warning C4305: '=' : troncation de 'double' à 'float'
+c:\workspace\jean\hae_jean_gp2\mt_case\app\entity.hpp(95): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case\app\entity.hpp(95): warning C4305: '=' : troncation de 'double' à 'float'
+c:\workspace\jean\hae_jean_gp2\mt_case\app\entity.hpp(105): warning C4305: '=' : troncation de 'double' à 'float'
+c:\workspace\jean\hae_jean_gp2\mt_case\app\entity.hpp(118): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case\app\entity.hpp(118): warning C4305: '=' : troncation de 'double' à 'float'
+c:\workspace\jean\hae_jean_gp2\mt_case\app\entity.hpp(124): warning C4305: '*=' : troncation de 'double' à 'float'
+c:\workspace\jean\hae_jean_gp2\mt_case\app\entity.hpp(125): warning C4305: '*=' : troncation de 'double' à 'float'
+c:\workspace\jean\hae_jean_gp2\mt_case\app\entity.hpp(125): warning C4305: '+=' : troncation de 'double' à 'float'
+c:\workspace\jean\hae_jean_gp2\mt_case\app\entity.hpp(126): warning C4305: '*=' : troncation de 'double' à 'float'
+c:\workspace\jean\hae_jean_gp2\mt_case\app\entity.hpp(126): warning C4305: '+=' : troncation de 'double' à 'float'
+c:\workspace\jean\hae_jean_gp2\mt_case\app\entity.hpp(152): warning C4065: l'instruction switch contient 'default' mais aucune étiquette 'case'
+c:\workspace\jean\hae_jean_gp2\mt_case\app\entity.hpp(157): warning C4065: l'instruction switch contient 'default' mais aucune étiquette 'case'
+c:\workspace\jean\hae_jean_gp2\mt_case\app\fadingparticle.h(18): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\jean\hae_jean_gp2\mt_case\app\app.cpp(208): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\jean\hae_jean_gp2\mt_case\app\app.cpp(211): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case\app\app.cpp(212): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\jean\hae_jean_gp2\mt_case\app\app.cpp(216): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\jean\hae_jean_gp2\mt_case\app\app.cpp(219): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case\app\app.cpp(220): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\jean\hae_jean_gp2\mt_case\app\app.cpp(239): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case\app\app.cpp(305): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\jean\hae_jean_gp2\mt_case\app\app.cpp(356): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\jean\hae_jean_gp2\mt_case\app\app.cpp(362): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case\app\app.cpp(377): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case\app\app.cpp(378): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\jean\hae_jean_gp2\mt_case\app\app.cpp(391): warning C4244: 'argument' : conversion de 'double' en 'float32', perte possible de données
+  Game.cpp
+c:\workspace\jean\hae_jean_gp2\mt_case\app\entity.hpp(66): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case\app\entity.hpp(67): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case\app\entity.hpp(85): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case\app\entity.hpp(85): warning C4305: '=' : troncation de 'double' à 'float'
+c:\workspace\jean\hae_jean_gp2\mt_case\app\entity.hpp(95): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case\app\entity.hpp(95): warning C4305: '=' : troncation de 'double' à 'float'
+c:\workspace\jean\hae_jean_gp2\mt_case\app\entity.hpp(105): warning C4305: '=' : troncation de 'double' à 'float'
+c:\workspace\jean\hae_jean_gp2\mt_case\app\entity.hpp(118): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case\app\entity.hpp(118): warning C4305: '=' : troncation de 'double' à 'float'
+c:\workspace\jean\hae_jean_gp2\mt_case\app\entity.hpp(124): warning C4305: '*=' : troncation de 'double' à 'float'
+c:\workspace\jean\hae_jean_gp2\mt_case\app\entity.hpp(125): warning C4305: '*=' : troncation de 'double' à 'float'
+c:\workspace\jean\hae_jean_gp2\mt_case\app\entity.hpp(125): warning C4305: '+=' : troncation de 'double' à 'float'
+c:\workspace\jean\hae_jean_gp2\mt_case\app\entity.hpp(126): warning C4305: '*=' : troncation de 'double' à 'float'
+c:\workspace\jean\hae_jean_gp2\mt_case\app\entity.hpp(126): warning C4305: '+=' : troncation de 'double' à 'float'
+c:\workspace\jean\hae_jean_gp2\mt_case\app\entity.hpp(152): warning C4065: l'instruction switch contient 'default' mais aucune étiquette 'case'
+c:\workspace\jean\hae_jean_gp2\mt_case\app\entity.hpp(157): warning C4065: l'instruction switch contient 'default' mais aucune étiquette 'case'
+c:\workspace\jean\hae_jean_gp2\mt_case\app\game.cpp(11): warning C4305: '+=' : troncation de 'double' à 'float'
+c:\workspace\jean\hae_jean_gp2\mt_case\app\game.cpp(15): warning C4305: '-=' : troncation de 'double' à 'float'
+  Génération de code en cours...
+  App.vcxproj -> C:\WORKSPACE\Jean\hae_Jean_gp2\mt_case\App\Debug\App.exe
