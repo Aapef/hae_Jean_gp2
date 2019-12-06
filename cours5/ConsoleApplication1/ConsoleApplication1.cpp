@@ -13,12 +13,14 @@
 #include "Particle.h"
 #include <windows.h>
 
+static sf::Shader * simpleShader = nullptr;
+float ttime;
 float timestamp2 = 0;
 int currentminpos = 0;
 sf::Vector2f vec(70, 120);
 sf::RectangleShape shape(vec);
-float rot1;
-float rot2;
+float rot1 = -90;
+float rot2 = -90;
 bool p1dead = false;
 bool p2dead = false;
 sf::RectangleShape shape2(vec);
@@ -42,6 +44,16 @@ Vector2f Normalize(Vector2f N) {
 
 int main()
 {
+
+	if (!sf::Shader::isAvailable()) {
+		printf("no shader available\n");
+	}
+
+	simpleShader = new Shader();
+	if (!simpleShader->loadFromFile("res/simple.vert", "res/simple.frag")) {
+		printf("unable to load shaders\n");
+	}
+
 	std::srand(GetTickCount());
 	shape.setOrigin(Vector2f(shape.getSize().x / 2, shape.getSize().y / 2 - 10));
 	shape2.setOrigin(Vector2f(shape2.getSize().x / 2, shape2.getSize().y / 2 - 5));
@@ -123,9 +135,9 @@ int main()
 
 		if (Joystick::isConnected(0) && !p1dead) {
 			if ((sf::Joystick::getAxisPosition(0, Joystick::Y) > 50 || sf::Joystick::getAxisPosition(0, Joystick::Y) < -50) || (sf::Joystick::getAxisPosition(0, Joystick::X) > 50 || sf::Joystick::getAxisPosition(0, Joystick::X) < -50)) {
-				rot1 = 57.3 * atan2(sf::Joystick::getAxisPosition(0, Joystick::X), -sf::Joystick::getAxisPosition(0, Joystick::Y)) - 90;
+				float rot11 = 57.3 * atan2(sf::Joystick::getAxisPosition(0, Joystick::X), -sf::Joystick::getAxisPosition(0, Joystick::Y)) - 90;
 				//if (gun.getPosition().y > mousepos.y) rot = -rot;
-				shape.setRotation(rot1 + 90);
+				shape.setRotation(rot11 + 90);
 
 			}
 			if (sf::Joystick::getAxisPosition(0,Joystick::Y)>-50)
@@ -148,9 +160,9 @@ int main()
 
 		if (Joystick::isConnected(1) && !p2dead) {
 			if ((sf::Joystick::getAxisPosition(1, Joystick::Y) > 50 || sf::Joystick::getAxisPosition(1, Joystick::Y) < -50) || (sf::Joystick::getAxisPosition(1, Joystick::X) > 50 || sf::Joystick::getAxisPosition(1, Joystick::X) < -50)) {
-				rot1 = 57.3 * atan2(sf::Joystick::getAxisPosition(1, Joystick::X), -sf::Joystick::getAxisPosition(1, Joystick::Y)) - 90;
+				float rot2 = 57.3 * atan2(sf::Joystick::getAxisPosition(1, Joystick::X), -sf::Joystick::getAxisPosition(1, Joystick::Y)) - 90;
 				//if (gun.getPosition().y > mousepos.y) rot = -rot;
-				shape2.setRotation(rot1 + 90);
+				shape2.setRotation(rot2 + 90);
 
 			}
 			if (sf::Joystick::getAxisPosition(1, Joystick::Y) > -50)
@@ -354,6 +366,8 @@ int main()
 					}
 				}
 
+
+
 				if (CenterWall.CheckCollidingWithSphere(zbleh.collider)) {
 					if (zbleh.Life == 1)
 					{
@@ -438,11 +452,18 @@ int main()
 		{
 			window.draw(zbleh.shape);
 		}
-
-		window.draw(shape);
-		window.draw(shape2);
-		window.draw(gun);
-		window.draw(gun2);
+		simpleShader->setUniform("positionx", shape.getPosition().x);
+		simpleShader->setUniform("positiony", shape.getPosition().y);
+		window.draw(shape,simpleShader);
+		simpleShader->setUniform("positionx", shape2.getPosition().x);
+		simpleShader->setUniform("positiony", shape2.getPosition().y);
+		window.draw(shape2, simpleShader);
+		simpleShader->setUniform("positionx", gun.getPosition().x);
+		simpleShader->setUniform("positiony", gun.getPosition().y);
+		window.draw(gun, simpleShader);
+		simpleShader->setUniform("positionx", gun2.getPosition().x);
+		simpleShader->setUniform("positiony", gun2.getPosition().y);
+		window.draw(gun2, simpleShader);
 		window.draw(CenterWallShape);
 		for (Boom zbleh : Boomlist) {
 			window.draw(zbleh.shape1);
@@ -451,6 +472,8 @@ int main()
 			window.draw(zbleh.shape4);
 		}
 		window.display();
+		//simpleShader->setUniform("position", shape.getPosition().x);
+		//ttime = ttime + 0.1f;
 	}
 
 	return 0;
