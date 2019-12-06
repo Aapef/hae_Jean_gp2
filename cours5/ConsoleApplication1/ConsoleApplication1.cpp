@@ -43,6 +43,8 @@ Vector2f Normalize(Vector2f N) {
 int main()
 {
 	std::srand(GetTickCount());
+	shape.setOrigin(Vector2f(shape.getSize().x / 2, shape.getSize().y / 2 - 10));
+	shape2.setOrigin(Vector2f(shape2.getSize().x / 2, shape2.getSize().y / 2 - 5));
 	gun.setOrigin(Vector2f(gun.getSize().x/2, gun.getSize().y / 2 + 30));
 	gun2.setOrigin(Vector2f(gun2.getSize().x / 2, gun2.getSize().y / 2 +40));
 	SquareCollider WestWall(-100, 1080, 100, -2000);
@@ -54,6 +56,8 @@ int main()
 	sf::RectangleShape CenterWallShape(vec);
 	CenterWallShape.setFillColor(sf::Color::White);
 	CenterWallShape.setPosition(1920 / 2 - 200, 1080 / 2 - 200);
+	Vector2f offset1 = Vector2f(shape.getSize().x / 2, shape.getSize().y / 2 - 10);
+	Vector2f offset2 = Vector2f(shape2.getSize().x / 2, shape2.getSize().y / 2 - 5);
 
 	sf::Texture T34Hull;
 	if (!T34Hull.loadFromFile("tanks_0_6.png")){}
@@ -72,7 +76,7 @@ int main()
 	}
 	sf::RenderWindow window(sf::VideoMode(1920, 1080), "SFML works!");
 	
-	shape.setPosition(0, 900);
+	shape.setPosition(100, 900);
 	shape2.setPosition(1720, 100);
 	/*gun.setFillColor(sf::Color::Red);
 	gun2.setFillColor(sf::Color::Red);
@@ -90,10 +94,10 @@ int main()
 	float timestamp = 0;
 	int timer = 0;
 	int io = 1;
-	SquareCollider TankCol(shape.getPosition().x, shape.getPosition().y, shape.getSize().x, shape.getSize().y);
+	SquareCollider TankCol(shape.getPosition().x, shape.getPosition().y, shape.getSize().x, shape.getSize().y - 10);
 	TankCol.PrevPos = shape.getPosition();
 
-	SquareCollider Tank2Col(shape2.getPosition().x, shape2.getPosition().y, shape2.getSize().x, shape2.getSize().y);
+	SquareCollider Tank2Col(shape2.getPosition().x, shape2.getPosition().y, shape2.getSize().x, shape2.getSize().y - 10);
 	Tank2Col.PrevPos = shape2.getPosition();
 
 	while (window.isOpen())
@@ -118,6 +122,12 @@ int main()
 		//Mouvements
 
 		if (Joystick::isConnected(0) && !p1dead) {
+			if ((sf::Joystick::getAxisPosition(0, Joystick::Y) > 50 || sf::Joystick::getAxisPosition(0, Joystick::Y) < -50) || (sf::Joystick::getAxisPosition(0, Joystick::X) > 50 || sf::Joystick::getAxisPosition(0, Joystick::X) < -50)) {
+				rot1 = 57.3 * atan2(sf::Joystick::getAxisPosition(0, Joystick::X), -sf::Joystick::getAxisPosition(0, Joystick::Y)) - 90;
+				//if (gun.getPosition().y > mousepos.y) rot = -rot;
+				shape.setRotation(rot1 + 90);
+
+			}
 			if (sf::Joystick::getAxisPosition(0,Joystick::Y)>-50)
 			{
 				shape.move(0, 4);
@@ -137,6 +147,12 @@ int main()
 		}
 
 		if (Joystick::isConnected(1) && !p2dead) {
+			if ((sf::Joystick::getAxisPosition(1, Joystick::Y) > 50 || sf::Joystick::getAxisPosition(1, Joystick::Y) < -50) || (sf::Joystick::getAxisPosition(1, Joystick::X) > 50 || sf::Joystick::getAxisPosition(1, Joystick::X) < -50)) {
+				rot1 = 57.3 * atan2(sf::Joystick::getAxisPosition(1, Joystick::X), -sf::Joystick::getAxisPosition(1, Joystick::Y)) - 90;
+				//if (gun.getPosition().y > mousepos.y) rot = -rot;
+				shape2.setRotation(rot1 + 90);
+
+			}
 			if (sf::Joystick::getAxisPosition(1, Joystick::Y) > -50)
 			{
 				shape2.move(0, 4);
@@ -177,7 +193,7 @@ int main()
 			{
 				p1canshoot = false;
 				Vector2f point(cos(rot1 / 57.3) * 100, sin(rot1 / 57.3) * 100);
-				Vector2f point1 = shape.getPosition() + Vector2f(40, 40) + point;
+				Vector2f point1 = shape.getPosition() /*+ Vector2f(40, 40)*/ + point;
 				Proj zbleh(point1, point, sf::Color::Green);
 				Projectils.push_back(zbleh);
 			}
@@ -195,15 +211,17 @@ int main()
 			{
 				p2canshoot = false;
 				Vector2f point(cos(rot2 / 57.3) * 100, sin(rot2 / 57.3) * 100);
-				Vector2f point1 = shape2.getPosition() + Vector2f(40, 40) + point;
+				Vector2f point1 = shape2.getPosition() /*+ Vector2f(40, 40)*/ + point;
 				Proj zbleh(point1, point, sf::Color::Blue);
 				Projectils.push_back(zbleh);
 			}
 			else if (sf::Joystick::getAxisPosition(1, Joystick::Z) < 50) p2canshoot = true;
 		}
 
-		gun.setPosition(Vector2f(shape.getPosition().x + shape.getSize().x/2, shape.getPosition().y + shape.getSize().y/2 -10));
-		gun2.setPosition(Vector2f(shape2.getPosition().x + shape2.getSize().x/2, shape2.getPosition().y + shape2.getSize().y/2 ));
+		//gun.setPosition(Vector2f(shape.getPosition().x + shape.getSize().x/2, shape.getPosition().y + shape.getSize().y/2 -10));
+		//gun2.setPosition(Vector2f(shape2.getPosition().x + shape2.getSize().x/2, shape2.getPosition().y + shape2.getSize().y/2 ));
+		gun.setPosition(shape.getPosition());
+		gun2.setPosition(shape2.getPosition());
 		for (Proj& zbleh : Projectils)
 		{
 			Vector2f dazonidaz = zbleh.shape.getPosition();
@@ -215,8 +233,8 @@ int main()
 
 		//Update Colliders
 
-		TankCol.update(shape.getPosition().x, shape.getPosition().y, shape.getSize().x, shape.getSize().y);
-		Tank2Col.update(shape2.getPosition().x, shape2.getPosition().y, shape2.getSize().x, shape2.getSize().y);
+		TankCol.update(shape.getPosition().x - shape.getSize().x/2.0f, shape.getPosition().y - shape.getSize().y / 2 + 20, shape.getSize().x, shape.getSize().y - 30);
+		Tank2Col.update(shape2.getPosition().x - shape2.getSize().x/2.0f - 10 , shape2.getPosition().y - shape2.getSize().y / 2 + 15, shape2.getSize().x + 20, shape2.getSize().y - 20);
 
 
 
@@ -409,8 +427,8 @@ int main()
 
 		//Update PrevPos
 
-		TankCol.PrevPos = shape.getPosition();
-		Tank2Col.PrevPos = shape2.getPosition();
+		TankCol.PrevPos = shape.getPosition();//- Vector2f(-50,50);
+		Tank2Col.PrevPos = shape2.getPosition(); //- Vector2f(-50, 50);
 
 
 
