@@ -17,8 +17,6 @@ using namespace sf;
 
 class Game {
 public:
-	RectangleShape rc;
-	Entity * playe ;
 	sf::Font* fnt;
 	std::vector< Particle * > pvec;
 	std::vector< Entity * > evec;
@@ -26,10 +24,10 @@ public:
 
 	Game() 
 	{
-
+		
 	}
 
-	void init();
+	Entity init();
 	void update(double dt);
 	void draw(RenderWindow & win);
 };

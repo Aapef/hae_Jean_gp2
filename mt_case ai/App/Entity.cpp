@@ -21,6 +21,14 @@ void Entity::update(double dt) {
 	ry += dy;
 	///////X BLOCK 
 	//maintain X cell coherency
+
+	bool cover = false;
+	for (int i = -3; i < 4; i++) {
+		for (int j = -3; j < 4; j++) {
+			if (willCollide(cx + i, cy + j)) { changeState(ES_COVER); cover = true; }
+		}
+	}
+	if (cover == false && getState() == ES_COVER) changeState(ES_IDLE);
 	if (dx > 0) 
 		while (rx > 1) { 
 			if (!willCollide(cx+1, cy)) {
@@ -67,18 +75,14 @@ void Entity::update(double dt) {
 	}
 
 
-	dx *= 0.92;
-	dy *= 0.92;
+	dx *= 0.8;
+	dy *= 0.8;
 	if (abs(dx) < 0.05) dx = 0;
 	if (abs(dy) < 0.05) dy = 0;
 
-	if( (dx == 0) && (dy == 0) && getState() != ES_IDLE) {
+	if( (dx == 0) && (dy == 0) && getState() != ES_IDLE && getState() != ES_COVER) {
 		changeState( ES_IDLE );
 	}
-
-/*	if (getState() == ES_FALLING) {
-		dropParticles();
-	}*/
 
 	syncCoord();
 }
@@ -160,13 +164,20 @@ std::string Entity::getStateName() {
 	switch (state)
 	{
 	case ES_IDLE:
+		spr->setFillColor(sf::Color::White);
 		return "idle";
 		break;
 	case ES_RUNNING:
+		spr->setFillColor(sf::Color::Green);
 		return "run";
 		break;
-	/*case ES_FALLING:
-		return "fall";
-		break;*/
+	case ES_COVER:
+		spr->setFillColor(sf::Color::Blue);
+		return "cover";
+		break;
+	case ES_WALKING:
+		spr->setFillColor(sf::Color::Red);
+		return "walk";
+		break;
 	}
 }

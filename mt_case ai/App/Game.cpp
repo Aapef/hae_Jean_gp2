@@ -26,10 +26,8 @@ void Game::init()
 void Game::makePlatforms() {
 	int cScreenWidth = 1280 / Entity::CELL_WIDTH;
 	int cScreenHeight = 720 / Entity::CELL_WIDTH;
-
-
-	platforms.push_back( Vector2i( 8, cScreenHeight-1) );
-	platforms.push_back( Vector2i(8, cScreenHeight-2) );
+	/*platforms.push_back( Vector2i( 8, cScreenHeight-1) );
+	platforms.push_back( Vector2i(8, cScreenHeight-2) );*/
 }
 
 

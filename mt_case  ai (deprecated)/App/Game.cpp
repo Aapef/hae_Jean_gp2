@@ -34,7 +34,7 @@ void Game::update(double dt)
 	}
 }
 
-void Game::init() {
+Entity Game::init() {
 	RectangleShape *sh = new RectangleShape(Vector2f(12, 24));
 	sh->setFillColor(sf::Color::Magenta);
 	sh->setOrigin(6, 24);
@@ -42,9 +42,7 @@ void Game::init() {
 	ent->setPosPixel(100, 100);
 	evec.push_back(ent);
 	player = ent;
-	playe = ent;
-	Entity e = *playe;
-	e.ge = this;
+	return *ent;
 }
 
 void Game::draw(RenderWindow & win)
@@ -54,8 +52,7 @@ void Game::draw(RenderWindow & win)
 		ent->draw(win);
 		it++;
 	}
-
-	Entity e = *playe;
+	Entity e = *player;
 	auto CW = e.CX_W;
 	RectangleShape cell;
 	cell.setFillColor(sf::Color(0x918EF0ff));

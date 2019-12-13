@@ -219,7 +219,7 @@ int main() {
 	walls[3].setPosition(0, winHeight - 1);
 	walls[3].setSize(Vector2f(winWidth, 16));
 
-	g.init();
+	Entity e = g.init();
 
 	while (window.isOpen())//on passe tout le temps DEBUT DE LA FRAME 
 	{
@@ -235,14 +235,10 @@ int main() {
 
 			case sf::Event::MouseButtonPressed:
 			{
-				Entity* temp = g.playe;
-				Entity temp2 = *temp;
-				auto CW = temp2.CX_W;
+				auto CW = e.CX_W;
 				int cx = mousePos.x / CW;
-				int cy = mousePos.y / CW;
-
-				
-				temp2.togglePlatform(cx, cy);
+				int cy = mousePos.y / CW;	
+				e.togglePlatform(cx, cy, g.platforms);
 				break;
 			}
 			

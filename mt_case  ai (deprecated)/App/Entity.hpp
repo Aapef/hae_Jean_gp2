@@ -17,7 +17,6 @@ class Entity {
 public:
 	
 	EntityState curstate = ES_IDLE;
-	Game *ge;
 
 	int CX_W = 16;
 	int CX_H = 16;
@@ -42,17 +41,17 @@ public:
 		this->spr = spr;
 	}
 
-	void togglePlatform(int cx, int cy) 
+	void togglePlatform(int cx, int cy, std::vector<Vector2i> platforms)
 	{
-		Game g = *ge;
-		for (auto it = g.platforms.begin(); it != g.platforms.end(); it++) {
+		for (auto it = platforms.begin(); it != platforms.end(); it++) 
+		{
 			Vector2i & pl = *it;
 			if (pl.x == cx && pl.y == cy) {
-				g.platforms.erase(it);
+				platforms.erase(it);
 				return;
 			}
 		}
-		g.platforms.push_back(Vector2i(cx, cy));
+		platforms.push_back(Vector2i(cx, cy));
 	}
 
 	void setPos(float crx, float cry) {
