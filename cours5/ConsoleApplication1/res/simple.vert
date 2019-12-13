@@ -5,13 +5,17 @@ uniform float positionx;
 uniform float positiony;
 vec4 position2;
 
+
 void main()
 {
 	position2.x = positionx;
 	position2.y = positiony;
 	
-
-	float szClamped = (((GL_MODEL * gl_Vertex).x - positionx) / 80.0);
+	mat4 Model = mat4(1.0f);
+	Model[0][3] = 0.1f;
+	Model[1][3] = -0.2f;
+	Model[2][3] = 0.5f;
+	float szClamped = (((Model * gl_Vertex).x - positionx) / 80.0);
 	float szc01 = ((szClamped+1)*0.5);
 	float sz = szc01 * 0.25 + 0.75;
 

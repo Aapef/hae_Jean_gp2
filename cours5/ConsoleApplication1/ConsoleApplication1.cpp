@@ -30,6 +30,10 @@ std::list <Proj> Projectils;
 std::list<Boom> Boomlist;
 bool p1canshoot = true;
 bool p2canshoot = true;
+bool shake = false;
+int shaker = 0;
+
+
 
 
 
@@ -53,6 +57,8 @@ int main()
 	if (!simpleShader->loadFromFile("res/simple.vert", "res/simple.frag")) {
 		printf("unable to load shaders\n");
 	}
+
+	
 
 	std::srand(GetTickCount());
 	shape.setOrigin(Vector2f(shape.getSize().x / 2, shape.getSize().y / 2 - 10));
@@ -90,10 +96,6 @@ int main()
 	
 	shape.setPosition(100, 900);
 	shape2.setPosition(1720, 100);
-	/*gun.setFillColor(sf::Color::Red);
-	gun2.setFillColor(sf::Color::Red);
-	shape.setFillColor(sf::Color::Green);
-	shape2.setFillColor(sf::Color::Blue);*/
 
 	shape.setTexture(&T34Hull);
 	shape2.setTexture(&PantherHull);
@@ -112,6 +114,15 @@ int main()
 	SquareCollider Tank2Col(shape2.getPosition().x, shape2.getPosition().y, shape2.getSize().x, shape2.getSize().y - 10);
 	Tank2Col.PrevPos = shape2.getPosition();
 
+	
+	Vector2f posbase = window.getView().getCenter();
+
+	auto vieww = window.getView();
+	int maxx = posbase.x + 10;
+	int minx = posbase.x - 10;
+	int maxy = posbase.y + 10;
+	int miny = posbase.y - 10;
+
 	while (window.isOpen())
 	{
 		if (timestamp <= 0 && io == -1) io = 1;
@@ -129,7 +140,25 @@ int main()
 		}
 		window.clear();
 
-
+		if (shake)
+		{	
+			if (shaker <= 20)
+			{
+				Vector2f vecfzojf(rand() % (maxx - minx + 1) + minx, rand() % (maxy - miny + 1) + miny);
+				vieww.setCenter(vecfzojf);
+				maxx-=0.5f;
+				maxy -= 0.5f;
+				minx+= 0.5f;
+				miny += 0.5f;
+				shaker++;
+			}
+			else 
+			{
+				vieww.setCenter(posbase);
+				shake = false;
+			}
+			window.setView(vieww);
+		}
 
 		//Mouvements
 
@@ -278,6 +307,12 @@ int main()
 						Boom zbleh2(zbleh.shape.getPosition(), sf::Color::Yellow, 10);
 						Boomlist.push_back(zbleh2);
 						Projectils.remove(zbleh);
+						shaker = 0;
+						shake = true;
+						maxx = posbase.x + 10;
+						minx = posbase.x - 10;
+						maxy = posbase.y + 10;
+						miny = posbase.y - 10;
 						break;
 					}
 					else if (zbleh.Life >= 2)
@@ -302,6 +337,12 @@ int main()
 						Boom zbleh2(zbleh.shape.getPosition(), sf::Color::Yellow, 10);
 						Boomlist.push_back(zbleh2);
 						Projectils.remove(zbleh);
+						shaker = 0;
+						shake = true;
+						maxx = posbase.x + 10;
+						minx = posbase.x - 10;
+						maxy = posbase.y + 10;
+						miny = posbase.y - 10;
 						break;
 					}
 					else if (zbleh.Life >= 2)
@@ -326,6 +367,12 @@ int main()
 						Boom zbleh2(zbleh.shape.getPosition(), sf::Color::Yellow, 10);
 						Boomlist.push_back(zbleh2);
 						Projectils.remove(zbleh);
+						shaker = 0;
+						shake = true;
+						maxx = posbase.x + 10;
+						minx = posbase.x - 10;
+						maxy = posbase.y + 10;
+						miny = posbase.y - 10;
 						break;
 					}
 					else if (zbleh.Life >= 2)
@@ -350,6 +397,12 @@ int main()
 						Boom zbleh2(zbleh.shape.getPosition(), sf::Color::Yellow, 10);
 						Boomlist.push_back(zbleh2);
 						Projectils.remove(zbleh);
+						shaker = 0;
+						shake = true;
+						maxx = posbase.x + 10;
+						minx = posbase.x - 10;
+						maxy = posbase.y + 10;
+						miny = posbase.y - 10;
 						break;
 					}
 					else if (zbleh.Life >= 2)
@@ -374,6 +427,12 @@ int main()
 						Boom zbleh2(zbleh.shape.getPosition(), sf::Color::Yellow, 10);
 						Boomlist.push_back(zbleh2);
 						Projectils.remove(zbleh);
+						shaker = 0;
+						shake = true;
+						maxx = posbase.x + 10;
+						minx = posbase.x - 10;
+						maxy = posbase.y + 10;
+						miny = posbase.y - 10;
 						break;
 					}
 					else if (zbleh.Life >= 2)
@@ -404,6 +463,12 @@ int main()
 				gun.setFillColor(sf::Color::Transparent);
 				p1dead = true;
 				Projectils.remove(zbleh);
+				shaker = -100;
+				shake = true;
+				maxx = posbase.x + 20;
+				minx = posbase.x - 20;
+				maxy = posbase.y + 20;
+				miny = posbase.y - 20;
 				break;
 			}
 			if (Tank2Col.CheckCollidingWithSphere(zbleh.collider) && !p2dead) {
@@ -416,6 +481,12 @@ int main()
 				gun2.setFillColor(sf::Color::Transparent);
 				p2dead = true;
 				Projectils.remove(zbleh);
+				shaker = -10;
+				shake = true;
+				maxx = posbase.x + 20;
+				minx = posbase.x - 20;
+				maxy = posbase.y + 20;
+				miny = posbase.y - 20;
 				break;
 			}
 			if (zbleh.timer > 0) zbleh.timer = 0;
@@ -454,16 +525,16 @@ int main()
 		}
 		simpleShader->setUniform("positionx", shape.getPosition().x);
 		simpleShader->setUniform("positiony", shape.getPosition().y);
-		window.draw(shape,simpleShader);
+		window.draw(shape/*,simpleShader*/);
 		simpleShader->setUniform("positionx", shape2.getPosition().x);
 		simpleShader->setUniform("positiony", shape2.getPosition().y);
-		window.draw(shape2, simpleShader);
+		window.draw(shape2/*,simpleShader*/);
 		simpleShader->setUniform("positionx", gun.getPosition().x);
 		simpleShader->setUniform("positiony", gun.getPosition().y);
-		window.draw(gun, simpleShader);
+		window.draw(gun/*,simpleShader*/);
 		simpleShader->setUniform("positionx", gun2.getPosition().x);
 		simpleShader->setUniform("positiony", gun2.getPosition().y);
-		window.draw(gun2, simpleShader);
+		window.draw(gun2/*,simpleShader*/);
 		window.draw(CenterWallShape);
 		for (Boom zbleh : Boomlist) {
 			window.draw(zbleh.shape1);
