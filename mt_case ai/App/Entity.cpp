@@ -5,6 +5,9 @@
 
 using namespace std;
 using namespace sf;
+bool docover = false;
+int timer = 0;
+
 
 void Entity::setPosPixel(float pixelX, float pixelY) {
 	cx = (int)pixelX / CELL_WIDTH;
@@ -21,14 +24,19 @@ void Entity::update(double dt) {
 	ry += dy;
 	///////X BLOCK 
 	//maintain X cell coherency
+	if (timer >= 60 && getState() == ES_IDLE) docover = true;
+	else if(getState() == ES_IDLE) timer++;
 
 	bool cover = false;
-	for (int i = -3; i < 4; i++) {
-		for (int j = -3; j < 4; j++) {
-			if (willCollide(cx + i, cy + j)) { changeState(ES_COVER); cover = true; }
+	if (docover) {
+		for (int i = -2; i < 3; i++) {
+			for (int j = -2; j < 3; j++) {
+				if (willCollide(cx + i, cy + j)) { if (getState() != ES_RUNNING) changeState(ES_COVER); cover = true; }
+			}
 		}
+		if (cover == false && getState() == ES_COVER) changeState(ES_WALKING);
 	}
-	if (cover == false && getState() == ES_COVER) changeState(ES_IDLE);
+
 	if (dx > 0) 
 		while (rx > 1) { 
 			if (!willCollide(cx+1, cy)) {
@@ -74,7 +82,6 @@ void Entity::update(double dt) {
 		}
 	}
 
-
 	dx *= 0.8;
 	dy *= 0.8;
 	if (abs(dx) < 0.05) dx = 0;
@@ -82,6 +89,8 @@ void Entity::update(double dt) {
 
 	if( (dx == 0) && (dy == 0) && getState() != ES_IDLE && getState() != ES_COVER) {
 		changeState( ES_IDLE );
+		docover = false;
+		timer = 0;
 	}
 
 	syncCoord();
@@ -169,13 +178,16 @@ std::string Entity::getStateName() {
 		break;
 	case ES_RUNNING:
 		spr->setFillColor(sf::Color::Green);
+		docover = false;
 		return "run";
 		break;
 	case ES_COVER:
+		docover = true;
 		spr->setFillColor(sf::Color::Blue);
 		return "cover";
 		break;
 	case ES_WALKING:
+		docover = true;
 		spr->setFillColor(sf::Color::Red);
 		return "walk";
 		break;

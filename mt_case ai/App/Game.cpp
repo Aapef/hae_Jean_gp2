@@ -32,42 +32,10 @@ void Game::makePlatforms() {
 
 
 void Game::update(double dt){
-	auto lat_acc = 0.075;
-	auto max_lat_speed = 0.75;
-
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
-		player->dx += lat_acc;
-		if (player->dx > max_lat_speed) player->dx = max_lat_speed;
-		if( player->getState() == ES_IDLE) player->changeState(ES_RUNNING);
-	}
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
-		player->dx -= lat_acc;
-		if (player->dx < -max_lat_speed) player->dx = -max_lat_speed;
-		if (player->getState() == ES_IDLE) player->changeState(ES_RUNNING);
-	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-	{
-		player->dy += lat_acc;
-		if (player->dy > max_lat_speed) player->dy = max_lat_speed;
-		if (player->getState() == ES_IDLE) player->changeState(ES_RUNNING);
-	}
-
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
-		player->dy -= lat_acc;
-		if (player->dy < -max_lat_speed) player->dy = -max_lat_speed;
-		if (player->getState() == ES_IDLE) player->changeState(ES_RUNNING);
-	}
-	
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter) ) {
-		player->setPosPixel(100,600); 
-		player->dx = player->dy = 0.0f;
-		player->applyGravity = false;
-		player->changeState( ES_IDLE );
-	}
 
 	for (auto it = evec.begin(); it != evec.end();) {
 		Entity * ent = *it;
-		ent->update(dt);
+		ent->updatecontrols(dt);
 		it++;
 	}
 
