@@ -1,0 +1,16 @@
+﻿  Game.cpp
+c:\workspace\jean\hae_jean_gp2\mt_case ai\app\game.cpp(41): warning C4244: '+=' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case ai\app\game.cpp(42): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case ai\app\game.cpp(46): warning C4244: '-=' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case ai\app\game.cpp(47): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case ai\app\game.cpp(52): warning C4244: '+=' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case ai\app\game.cpp(53): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case ai\app\game.cpp(58): warning C4244: '-=' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case ai\app\game.cpp(59): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case ai\app\game.cpp(90): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\jean\hae_jean_gp2\mt_case ai\app\game.cpp(92): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+  App.vcxproj -> C:\WORKSPACE\Jean\hae_Jean_gp2\mt_case ai\App\Debug\App.exe

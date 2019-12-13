@@ -1,0 +1,125 @@
+﻿  App.cpp
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(20): error C2143: erreur de syntaxe : absence de ';' avant '*'
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(20): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(20): error C2238: jetons inattendus avant ';'
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(47): error C2065: 'Game' : identificateur non déclaré
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(47): error C2146: erreur de syntaxe : absence de ';' avant l'identificateur 'g'
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(47): error C2065: 'g' : identificateur non déclaré
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(47): error C2065: 'ge' : identificateur non déclaré
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(48): error C2065: 'g' : identificateur non déclaré
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(48): error C3536: 'it' : ne peut pas être utilisé avant d'avoir été initialisé
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(49): error C2100: indirection non conforme
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(49): error C2440: 'initialisation' : impossible de convertir de 'int' en 'sf::Vector2i &'
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(51): error C2065: 'g' : identificateur non déclaré
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(55): error C2065: 'g' : identificateur non déclaré
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(83): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(84): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(102): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(102): warning C4305: '=' : troncation de 'double' à 'float'
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(112): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(112): warning C4305: '=' : troncation de 'double' à 'float'
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(122): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(122): warning C4305: '=' : troncation de 'double' à 'float'
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(132): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(132): warning C4305: '=' : troncation de 'double' à 'float'
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(138): warning C4305: '*=' : troncation de 'double' à 'float'
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(139): warning C4305: '*=' : troncation de 'double' à 'float'
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(165): warning C4065: l'instruction switch contient 'default' mais aucune étiquette 'case'
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(170): warning C4065: l'instruction switch contient 'default' mais aucune étiquette 'case'
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\fadingparticle.h(18): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\app.cpp(208): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\app.cpp(211): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\app.cpp(212): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\app.cpp(216): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\app.cpp(219): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\app.cpp(220): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\app.cpp(241): warning C4244: 'initialisation' : conversion de 'T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\app.cpp(242): warning C4244: 'initialisation' : conversion de 'T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\app.cpp(252): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\app.cpp(318): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\app.cpp(369): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\app.cpp(375): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\app.cpp(390): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\app.cpp(391): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\app.cpp(404): warning C4244: 'argument' : conversion de 'double' en 'float32', perte possible de données
+  Game.cpp
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(20): error C2143: erreur de syntaxe : absence de ';' avant '*'
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(20): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(20): error C2238: jetons inattendus avant ';'
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(47): error C2065: 'Game' : identificateur non déclaré
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(47): error C2146: erreur de syntaxe : absence de ';' avant l'identificateur 'g'
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(47): error C2065: 'g' : identificateur non déclaré
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(47): error C2065: 'ge' : identificateur non déclaré
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(48): error C2065: 'g' : identificateur non déclaré
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(48): error C3536: 'it' : ne peut pas être utilisé avant d'avoir été initialisé
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(49): error C2100: indirection non conforme
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(49): error C2440: 'initialisation' : impossible de convertir de 'int' en 'sf::Vector2i &'
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(51): error C2065: 'g' : identificateur non déclaré
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(55): error C2065: 'g' : identificateur non déclaré
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(83): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(84): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(102): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(102): warning C4305: '=' : troncation de 'double' à 'float'
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(112): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(112): warning C4305: '=' : troncation de 'double' à 'float'
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(122): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(122): warning C4305: '=' : troncation de 'double' à 'float'
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(132): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(132): warning C4305: '=' : troncation de 'double' à 'float'
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(138): warning C4305: '*=' : troncation de 'double' à 'float'
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(139): warning C4305: '*=' : troncation de 'double' à 'float'
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(165): warning C4065: l'instruction switch contient 'default' mais aucune étiquette 'case'
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(170): warning C4065: l'instruction switch contient 'default' mais aucune étiquette 'case'
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\game.cpp(11): warning C4305: '+=' : troncation de 'double' à 'float'
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\game.cpp(15): warning C4305: '-=' : troncation de 'double' à 'float'
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\game.cpp(21): warning C4305: '+=' : troncation de 'double' à 'float'
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\game.cpp(26): warning C4305: '-=' : troncation de 'double' à 'float'
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\game.cpp(47): error C2039: 'ge' : n'est pas membre de 'Entity'
+  c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\entity.hpp(16): note: voir la déclaration de 'Entity'
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\game.cpp(62): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\jean\hae_jean_gp2\mt_case  ai\app\game.cpp(64): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+  Génération de code en cours...
