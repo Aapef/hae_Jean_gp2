@@ -1,0 +1,101 @@
+﻿  App.cpp
+c:\workspace\jean\hae_jean_gp2\mt_case ai\app\fadingparticle.h(18): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\jean\hae_jean_gp2\mt_case ai\app\app.cpp(76): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case ai\app\app.cpp(92): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case ai\app\app.cpp(209): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\jean\hae_jean_gp2\mt_case ai\app\app.cpp(212): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case ai\app\app.cpp(213): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\jean\hae_jean_gp2\mt_case ai\app\app.cpp(217): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\jean\hae_jean_gp2\mt_case ai\app\app.cpp(220): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case ai\app\app.cpp(221): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\jean\hae_jean_gp2\mt_case ai\app\app.cpp(240): warning C4244: 'initialisation' : conversion de 'T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\jean\hae_jean_gp2\mt_case ai\app\app.cpp(241): warning C4244: 'initialisation' : conversion de 'T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\jean\hae_jean_gp2\mt_case ai\app\app.cpp(250): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case ai\app\app.cpp(316): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\jean\hae_jean_gp2\mt_case ai\app\app.cpp(368): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\jean\hae_jean_gp2\mt_case ai\app\app.cpp(374): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case ai\app\app.cpp(389): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case ai\app\app.cpp(390): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\jean\hae_jean_gp2\mt_case ai\app\app.cpp(403): warning C4244: 'argument' : conversion de 'double' en 'float32', perte possible de données
+  Entity.cpp
+c:\workspace\jean\hae_jean_gp2\mt_case ai\app\fadingparticle.h(18): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\jean\hae_jean_gp2\mt_case ai\app\entity.cpp(31): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case ai\app\entity.cpp(32): warning C4305: '=' : troncation de 'double' à 'float'
+c:\workspace\jean\hae_jean_gp2\mt_case ai\app\entity.cpp(43): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case ai\app\entity.cpp(44): warning C4305: '=' : troncation de 'double' à 'float'
+c:\workspace\jean\hae_jean_gp2\mt_case ai\app\entity.cpp(68): warning C4305: '=' : troncation de 'double' à 'float'
+c:\workspace\jean\hae_jean_gp2\mt_case ai\app\entity.cpp(95): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case ai\app\entity.cpp(110): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case ai\app\entity.cpp(165): warning C4065: l'instruction switch contient 'default' mais aucune étiquette 'case'
+c:\workspace\jean\hae_jean_gp2\mt_case ai\app\entity.cpp(171): warning C4065: l'instruction switch contient 'default' mais aucune étiquette 'case'
+  Game.cpp
+c:\workspace\jean\hae_jean_gp2\mt_case ai\app\game.cpp(41): warning C4244: '+=' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case ai\app\game.cpp(42): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case ai\app\game.cpp(46): warning C4244: '-=' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case ai\app\game.cpp(47): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+c:\workspace\jean\hae_jean_gp2\mt_case ai\app\game.cpp(53): warning C4305: '-=' : troncation de 'double' à 'float'
+c:\workspace\jean\hae_jean_gp2\mt_case ai\app\game.cpp(85): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\jean\hae_jean_gp2\mt_case ai\app\game.cpp(87): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+  Lib.cpp
+c:\workspace\jean\hae_jean_gp2\mt_case ai\app\lib.cpp(106): warning C4244: '/=' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\jean\hae_jean_gp2\mt_case ai\app\lib.cpp(107): warning C4244: '/=' : conversion de 'double' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\workspace\jean\hae_jean_gp2\mt_case ai\app\lib.cpp(136): warning C4244: 'argument' : conversion de 'double' en 'float32', perte possible de données
+  Génération de code en cours...
+c:\workspace\jean\hae_jean_gp2\mt_case ai\app\entity.cpp(194): warning C4715: 'Entity::getStateName' : les chemins de contrôle ne retournent pas tous une valeur
+sfml-graphics-d.lib(sfml-graphics-d-2.dll) : fatal error LNK1112: type d'ordinateur module 'x86' en conflit avec le type d'ordinateur cible 'x64'
