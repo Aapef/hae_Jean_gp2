@@ -34,6 +34,7 @@ bool shake = false;
 int shaker = 0;
 bool doplay = false;
 int textimer = 0;
+bool doflash = false;
 
 
 
@@ -69,6 +70,10 @@ int main()
 		shape2.setFillColor(sf::Color::White);
 		gun.setFillColor(sf::Color::White);
 		gun2.setFillColor(sf::Color::White);
+
+		sf::Texture projtext;
+		if (!projtext.loadFromFile("bullet.png")) { printf("unable to load bullet texture\n"); }
+
 		if (!sf::Shader::isAvailable()) {
 			printf("no shader available\n");
 		}
@@ -132,6 +137,9 @@ int main()
 		Tank2Col.PrevPos = shape2.getPosition();
 
 
+		sf::RectangleShape flash(Vector2f(1920,1080));
+		flash.setFillColor(sf::Color(255, 255, 255, 160));
+
 		Vector2f posbase = window.getView().getCenter();
 
 		auto vieww = window.getView();
@@ -142,6 +150,7 @@ int main()
 
 		while (window.isOpen())
 		{
+			doflash = false;
 			if (timestamp <= 0 && io == -1) io = 1;
 			if (timestamp >= 250 / 50 && io == 1) io = -1;
 			timestamp += io * 0.05;
@@ -253,6 +262,7 @@ int main()
 						Vector2f point(cos(rot1 / 57.3) * 100, sin(rot1 / 57.3) * 100);
 						Vector2f point1 = shape.getPosition() /*+ Vector2f(40, 40)*/ + point;
 						Proj zbleh(point1, point, sf::Color::Green);
+						zbleh.shape.setTexture(&projtext);
 						Projectils.push_back(zbleh);
 					}
 					else if (sf::Joystick::getAxisPosition(0, Joystick::Z) < 50) p1canshoot = true;
@@ -271,6 +281,7 @@ int main()
 						Vector2f point(cos(rot2 / 57.3) * 100, sin(rot2 / 57.3) * 100);
 						Vector2f point1 = shape2.getPosition() /*+ Vector2f(40, 40)*/ + point;
 						Proj zbleh(point1, point, sf::Color::Blue);
+						zbleh.shape.setTexture(&projtext);
 						Projectils.push_back(zbleh);
 					}
 					else if (sf::Joystick::getAxisPosition(1, Joystick::Z) < 50) p2canshoot = true;
@@ -326,6 +337,7 @@ int main()
 							Projectils.remove(zbleh);
 							shaker = 0;
 							shake = true;
+							doflash = true;
 							maxx = posbase.x + 10;
 							minx = posbase.x - 10;
 							maxy = posbase.y + 10;
@@ -356,6 +368,7 @@ int main()
 							Projectils.remove(zbleh);
 							shaker = 0;
 							shake = true;
+							doflash = true;
 							maxx = posbase.x + 10;
 							minx = posbase.x - 10;
 							maxy = posbase.y + 10;
@@ -386,6 +399,7 @@ int main()
 							Projectils.remove(zbleh);
 							shaker = 0;
 							shake = true;
+							doflash = true;
 							maxx = posbase.x + 10;
 							minx = posbase.x - 10;
 							maxy = posbase.y + 10;
@@ -416,6 +430,7 @@ int main()
 							Projectils.remove(zbleh);
 							shaker = 0;
 							shake = true;
+							doflash = true;
 							maxx = posbase.x + 10;
 							minx = posbase.x - 10;
 							maxy = posbase.y + 10;
@@ -446,6 +461,7 @@ int main()
 							Projectils.remove(zbleh);
 							shaker = 0;
 							shake = true;
+							doflash = true;
 							maxx = posbase.x + 10;
 							minx = posbase.x - 10;
 							maxy = posbase.y + 10;
@@ -476,6 +492,8 @@ int main()
 					Boom zbleh3(shape.getPosition(), sf::Color::Red, 20);
 					Boomlist.push_back(zbleh3);
 
+					doflash = true;
+
 					shape.setFillColor(sf::Color::Transparent);
 					gun.setFillColor(sf::Color::Transparent);
 					p1dead = true;
@@ -493,6 +511,8 @@ int main()
 					Boomlist.push_back(zbleh2);
 					Boom zbleh3(shape2.getPosition(), sf::Color::Red, 20);
 					Boomlist.push_back(zbleh3);
+
+					doflash = true;
 
 					shape2.setFillColor(sf::Color::Transparent);
 					gun2.setFillColor(sf::Color::Transparent);
@@ -534,22 +554,23 @@ int main()
 
 			//Render
 
+
 			for (Proj zbleh : Projectils)
 			{
 				window.draw(zbleh.shape);
 			}
-			simpleShader->setUniform("positionx", shape.getPosition().x);
-			simpleShader->setUniform("positiony", shape.getPosition().y);
-			window.draw(shape/*,simpleShader*/);
-			simpleShader->setUniform("positionx", shape2.getPosition().x);
-			simpleShader->setUniform("positiony", shape2.getPosition().y);
-			window.draw(shape2/*,simpleShader*/);
-			simpleShader->setUniform("positionx", gun.getPosition().x);
-			simpleShader->setUniform("positiony", gun.getPosition().y);
-			window.draw(gun/*,simpleShader*/);
-			simpleShader->setUniform("positionx", gun2.getPosition().x);
-			simpleShader->setUniform("positiony", gun2.getPosition().y);
-			window.draw(gun2/*,simpleShader*/);
+			/*simpleShader->setUniform("positionx", shape.getPosition().x);
+			simpleShader->setUniform("positiony", shape.getPosition().y);*/
+			window.draw(shape);
+			/*simpleShader->setUniform("positionx", shape2.getPosition().x);
+			simpleShader->setUniform("positiony", shape2.getPosition().y);*/
+			window.draw(shape2);
+			/*simpleShader->setUniform("positionx", gun.getPosition().x);
+			simpleShader->setUniform("positiony", gun.getPosition().y);*/
+			window.draw(gun);
+			/*simpleShader->setUniform("positionx", gun2.getPosition().x);
+			simpleShader->setUniform("positiony", gun2.getPosition().y);*/
+			window.draw(gun2);
 			window.draw(CenterWallShape);
 			for (Boom zbleh : Boomlist) {
 				window.draw(zbleh.shape1);
@@ -558,12 +579,21 @@ int main()
 				window.draw(zbleh.shape4);
 			}
 
+			if(doflash)window.draw(flash);
+
 			sf::Text text;
 			text.setFont(font);
 			text.setFillColor(sf::Color::Red);
 			text.setPosition(800, 800);
 			text.setString("Press A to play");
 			text.setCharacterSize(50);
+
+			sf::Text text2;
+			text2.setFont(font);
+			text2.setFillColor(sf::Color::Red);
+			text2.setPosition(770, 900);
+			text2.setString("(Player 2 missing)");
+			text2.setCharacterSize(50);
 
 			sf::Text title;
 			title.setFont(font);
@@ -572,8 +602,28 @@ int main()
 			title.setString("A shitty tonk game");
 			title.setCharacterSize(200);
 
-			if (!doplay) window.draw(title);
-			if (!doplay && textimer >= 0) window.draw(text);
+
+			if (p1dead) 
+			{
+				title.setPosition(320, 100);
+				text.setPosition(740, 800);
+				title.setString("Player 2 wins!");
+				text.setString("Press Start to restart");
+			}
+			else if (p2dead) 
+			{
+				title.setPosition(320, 100);
+				text.setPosition(740, 800);
+				title.setString("Player 1 wins!");
+				text.setString("Press Start to restart");
+			}
+
+			if (!Joystick::isConnected(1))
+			{
+				if (!doplay && textimer >= 0) window.draw(text2);
+			}
+			if (!doplay ||(p1dead||p2dead)) window.draw(title);
+			if ((!doplay || (p1dead || p2dead) )&& textimer >= 0) window.draw(text);
 			if (!doplay && sf::Joystick::isButtonPressed(0, 0)) doplay = true;
 
 			textimer++;
