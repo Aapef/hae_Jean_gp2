@@ -23,7 +23,6 @@ public:
 		collider.Update(Coordinates, 10);
 		shape.setRadius(10);
 
-		//shape.setFillColor(color);
 		shape.setPosition(Coordinates);
 
 		Position = Coordinates;

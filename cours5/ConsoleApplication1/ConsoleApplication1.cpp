@@ -71,6 +71,19 @@ int main()
 		gun.setFillColor(sf::Color::White);
 		gun2.setFillColor(sf::Color::White);
 
+		sf::RectangleShape groundshape(Vector2f(1920,1080));
+
+		sf::Texture ground;
+		if (!ground.loadFromFile("ground.png")) { printf("unable to load ground texture\n"); }
+
+		groundshape.setTexture(&ground);
+
+		sf::Texture sparks;
+		if (!sparks.loadFromFile("sparks.png")) { printf("unable to load sparks texture\n"); }
+
+		sf::Texture explosion;
+		if (!explosion.loadFromFile("explosion.png")) { printf("unable to load explosion texture\n"); }
+
 		sf::Texture projtext;
 		if (!projtext.loadFromFile("bullet.png")) { printf("unable to load bullet texture\n"); }
 
@@ -252,7 +265,6 @@ int main()
 
 					if ((sf::Joystick::getAxisPosition(0, Joystick::U) > 50 || sf::Joystick::getAxisPosition(0, Joystick::U) < -50) || (sf::Joystick::getAxisPosition(0, Joystick::V) > 50 || sf::Joystick::getAxisPosition(0, Joystick::V) < -50)) {
 						rot1 = 57.3 * atan2(sf::Joystick::getAxisPosition(0, Joystick::U), -sf::Joystick::getAxisPosition(0, Joystick::V)) - 90;
-						//if (gun.getPosition().y > mousepos.y) rot = -rot;
 						gun.setRotation(rot1 + 90);
 
 					}
@@ -260,10 +272,12 @@ int main()
 					{
 						p1canshoot = false;
 						Vector2f point(cos(rot1 / 57.3) * 100, sin(rot1 / 57.3) * 100);
-						Vector2f point1 = shape.getPosition() /*+ Vector2f(40, 40)*/ + point;
+						Vector2f point1 = shape.getPosition() + point;
 						Proj zbleh(point1, point, sf::Color::Green);
 						zbleh.shape.setTexture(&projtext);
 						Projectils.push_back(zbleh);
+						Boom zbleh2(point1 - Vector2f(point.x / 10, point.y / 10), &sparks, 20, true);
+						Boomlist.push_back(zbleh2);
 					}
 					else if (sf::Joystick::getAxisPosition(0, Joystick::Z) < 50) p1canshoot = true;
 				}
@@ -279,16 +293,37 @@ int main()
 					{
 						p2canshoot = false;
 						Vector2f point(cos(rot2 / 57.3) * 100, sin(rot2 / 57.3) * 100);
-						Vector2f point1 = shape2.getPosition() /*+ Vector2f(40, 40)*/ + point;
+						Vector2f point1 = shape2.getPosition() + point;
 						Proj zbleh(point1, point, sf::Color::Blue);
 						zbleh.shape.setTexture(&projtext);
 						Projectils.push_back(zbleh);
+						Boom zbleh2(point1-Vector2f(point.x/10, point.y/10), &sparks, 20, true);
+						Boomlist.push_back(zbleh2);
 					}
 					else if (sf::Joystick::getAxisPosition(1, Joystick::Z) < 50) p2canshoot = true;
 				}
 			}
-			//gun.setPosition(Vector2f(shape.getPosition().x + shape.getSize().x/2, shape.getPosition().y + shape.getSize().y/2 -10));
-			//gun2.setPosition(Vector2f(shape2.getPosition().x + shape2.getSize().x/2, shape2.getPosition().y + shape2.getSize().y/2 ));
+
+			//Update Colliders
+
+			TankCol.update(shape.getPosition().x - shape.getSize().x / 2.0f, shape.getPosition().y - shape.getSize().y / 2 + 20, shape.getSize().x, shape.getSize().y - 30);
+			Tank2Col.update(shape2.getPosition().x - shape2.getSize().x / 2.0f - 10, shape2.getPosition().y - shape2.getSize().y / 2 + 15, shape2.getSize().x + 20, shape2.getSize().y - 20);
+
+			//Collision Check
+
+			if (NorthWall.CheckColliding(TankCol))shape.setPosition(TankCol.PrevPos);
+			if (SouthWall.CheckColliding(TankCol))shape.setPosition(TankCol.PrevPos);
+			if (EastWall.CheckColliding(TankCol))shape.setPosition(TankCol.PrevPos);
+			if (WestWall.CheckColliding(TankCol))shape.setPosition(TankCol.PrevPos);
+			if (CenterWall.CheckColliding(TankCol))shape.setPosition(TankCol.PrevPos);
+
+			if (NorthWall.CheckColliding(Tank2Col))shape2.setPosition(Tank2Col.PrevPos);
+			if (SouthWall.CheckColliding(Tank2Col))shape2.setPosition(Tank2Col.PrevPos);
+			if (EastWall.CheckColliding(Tank2Col))shape2.setPosition(Tank2Col.PrevPos);
+			if (WestWall.CheckColliding(Tank2Col))shape2.setPosition(Tank2Col.PrevPos);
+			if (CenterWall.CheckColliding(Tank2Col))shape2.setPosition(Tank2Col.PrevPos);
+
+
 			gun.setPosition(shape.getPosition());
 			gun2.setPosition(shape2.getPosition());
 			for (Proj& zbleh : Projectils)
@@ -298,7 +333,7 @@ int main()
 				zbleh.updatecollider();
 			}
 
-
+			/*
 
 			//Update Colliders
 
@@ -321,7 +356,7 @@ int main()
 			if (WestWall.CheckColliding(Tank2Col))shape2.setPosition(Tank2Col.PrevPos);
 			if (CenterWall.CheckColliding(Tank2Col))shape2.setPosition(Tank2Col.PrevPos);
 
-
+*/
 
 			//Proj Bouncing
 
@@ -332,7 +367,7 @@ int main()
 					if (NorthWall.CheckCollidingWithSphere(zbleh.collider)) {
 						if (zbleh.Life == 1)
 						{
-							Boom zbleh2(zbleh.shape.getPosition(), sf::Color::Yellow, 10);
+							Boom zbleh2(zbleh.shape.getPosition(), &sparks, 30,false);
 							Boomlist.push_back(zbleh2);
 							Projectils.remove(zbleh);
 							shaker = 0;
@@ -363,7 +398,7 @@ int main()
 					if (SouthWall.CheckCollidingWithSphere(zbleh.collider)) {
 						if (zbleh.Life == 1)
 						{
-							Boom zbleh2(zbleh.shape.getPosition(), sf::Color::Yellow, 10);
+							Boom zbleh2(zbleh.shape.getPosition(), &sparks, 30, false);
 							Boomlist.push_back(zbleh2);
 							Projectils.remove(zbleh);
 							shaker = 0;
@@ -394,7 +429,7 @@ int main()
 					if (EastWall.CheckCollidingWithSphere(zbleh.collider)) {
 						if (zbleh.Life == 1)
 						{
-							Boom zbleh2(zbleh.shape.getPosition(), sf::Color::Yellow, 10);
+							Boom zbleh2(zbleh.shape.getPosition(), &sparks, 30, false);
 							Boomlist.push_back(zbleh2);
 							Projectils.remove(zbleh);
 							shaker = 0;
@@ -425,7 +460,7 @@ int main()
 					if (WestWall.CheckCollidingWithSphere(zbleh.collider)) {
 						if (zbleh.Life == 1)
 						{
-							Boom zbleh2(zbleh.shape.getPosition(), sf::Color::Yellow, 10);
+							Boom zbleh2(zbleh.shape.getPosition(), &sparks, 30, false);
 							Boomlist.push_back(zbleh2);
 							Projectils.remove(zbleh);
 							shaker = 0;
@@ -456,7 +491,7 @@ int main()
 					if (CenterWall.CheckCollidingWithSphere(zbleh.collider)) {
 						if (zbleh.Life == 1)
 						{
-							Boom zbleh2(zbleh.shape.getPosition(), sf::Color::Yellow, 10);
+							Boom zbleh2(zbleh.shape.getPosition(), &sparks, 30, false);
 							Boomlist.push_back(zbleh2);
 							Projectils.remove(zbleh);
 							shaker = 0;
@@ -487,9 +522,9 @@ int main()
 
 				if (TankCol.CheckCollidingWithSphere(zbleh.collider) && !p1dead) {
 
-					Boom zbleh2(shape.getPosition(), sf::Color::Red, 20);
+					Boom zbleh2(shape.getPosition(), &sparks, 80, false);
 					Boomlist.push_back(zbleh2);
-					Boom zbleh3(shape.getPosition(), sf::Color::Red, 20);
+					Boom zbleh3(shape.getPosition(), &sparks, 80, false);
 					Boomlist.push_back(zbleh3);
 
 					doflash = true;
@@ -507,9 +542,9 @@ int main()
 					break;
 				}
 				if (Tank2Col.CheckCollidingWithSphere(zbleh.collider) && !p2dead) {
-					Boom zbleh2(shape2.getPosition(), sf::Color::Red, 20);
+					Boom zbleh2(shape2.getPosition(), &sparks, 80, false);
 					Boomlist.push_back(zbleh2);
-					Boom zbleh3(shape2.getPosition(), sf::Color::Red, 20);
+					Boom zbleh3(shape2.getPosition(), &sparks, 80, false);
 					Boomlist.push_back(zbleh3);
 
 					doflash = true;
@@ -549,27 +584,20 @@ int main()
 
 			//Update PrevPos
 
-			TankCol.PrevPos = shape.getPosition();//- Vector2f(-50,50);
-			Tank2Col.PrevPos = shape2.getPosition(); //- Vector2f(-50, 50);
+			TankCol.PrevPos = shape.getPosition();
+			Tank2Col.PrevPos = shape2.getPosition(); 
 
 			//Render
 
+			window.draw(groundshape);
 
 			for (Proj zbleh : Projectils)
 			{
 				window.draw(zbleh.shape);
 			}
-			/*simpleShader->setUniform("positionx", shape.getPosition().x);
-			simpleShader->setUniform("positiony", shape.getPosition().y);*/
 			window.draw(shape);
-			/*simpleShader->setUniform("positionx", shape2.getPosition().x);
-			simpleShader->setUniform("positiony", shape2.getPosition().y);*/
 			window.draw(shape2);
-			/*simpleShader->setUniform("positionx", gun.getPosition().x);
-			simpleShader->setUniform("positiony", gun.getPosition().y);*/
 			window.draw(gun);
-			/*simpleShader->setUniform("positionx", gun2.getPosition().x);
-			simpleShader->setUniform("positiony", gun2.getPosition().y);*/
 			window.draw(gun2);
 			window.draw(CenterWallShape);
 			for (Boom zbleh : Boomlist) {
