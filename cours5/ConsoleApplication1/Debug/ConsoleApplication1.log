@@ -113,108 +113,83 @@ d:\repo\hae_jean_gp2\cours5\consoleapplication1\collider.hpp(55): warning C4244:
           ]
 d:\repo\hae_jean_gp2\cours5\consoleapplication1\particle.h(24): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
 d:\repo\hae_jean_gp2\cours5\consoleapplication1\particle.h(28): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
-d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(28): warning C4305: 'argument' : troncation de 'double' à 'T'
+d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(29): warning C4305: 'argument' : troncation de 'double' à 'T'
           with
           [
               T=float
           ]
-d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(146): warning C4244: 'argument' : conversion de 'T' en 'int', perte possible de données
+d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(175): warning C4244: 'argument' : conversion de 'T' en 'int', perte possible de données
           with
           [
               T=float
           ]
-d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(146): warning C4244: 'argument' : conversion de 'const T' en 'int', perte possible de données
+d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(175): warning C4244: 'argument' : conversion de 'const T' en 'int', perte possible de données
           with
           [
               T=float
           ]
-d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(149): warning C4244: 'argument' : conversion de 'T' en 'int', perte possible de données
+d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(178): warning C4244: 'argument' : conversion de 'T' en 'int', perte possible de données
           with
           [
               T=float
           ]
-d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(149): warning C4244: 'argument' : conversion de 'const T' en 'int', perte possible de données
+d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(178): warning C4244: 'argument' : conversion de 'const T' en 'int', perte possible de données
           with
           [
               T=float
           ]
-d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(159): warning C4244: 'initialisation' : conversion de 'T' en 'int', perte possible de données
+d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(188): warning C4244: 'initialisation' : conversion de 'T' en 'int', perte possible de données
           with
           [
               T=float
           ]
-d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(160): warning C4244: 'initialisation' : conversion de 'T' en 'int', perte possible de données
+d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(189): warning C4244: 'initialisation' : conversion de 'T' en 'int', perte possible de données
           with
           [
               T=float
           ]
-d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(161): warning C4244: 'initialisation' : conversion de 'T' en 'int', perte possible de données
+d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(190): warning C4244: 'initialisation' : conversion de 'T' en 'int', perte possible de données
           with
           [
               T=float
           ]
-d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(162): warning C4244: 'initialisation' : conversion de 'T' en 'int', perte possible de données
+d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(191): warning C4244: 'initialisation' : conversion de 'T' en 'int', perte possible de données
           with
           [
               T=float
           ]
-d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(169): warning C4244: '+=' : conversion de 'double' en 'float', perte possible de données
-d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(170): warning C4305: '+=' : troncation de 'double' à 'float'
-d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(186): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(198): warning C4244: '+=' : conversion de 'double' en 'float', perte possible de données
+d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(199): warning C4305: '+=' : troncation de 'double' à 'float'
+d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(215): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
           with
           [
               T=float
           ]
-d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(206): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
-d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(231): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
-d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(267): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
-d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(274): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(235): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
+d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(260): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
+d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(296): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(303): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=float
           ]
-d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(288): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
-d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(295): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
+d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(319): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(326): warning C4244: 'argument' : conversion de 'double' en 'T', perte possible de données
           with
           [
               T=float
           ]
-d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(309): warning C4244: 'argument' : conversion de 'T' en 'int', perte possible de données
+d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(341): warning C4244: 'argument' : conversion de 'T' en 'int', perte possible de données
           with
           [
               T=float
           ]
-d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(309): warning C4244: 'argument' : conversion de 'const T' en 'int', perte possible de données
+d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(341): warning C4244: 'argument' : conversion de 'const T' en 'int', perte possible de données
           with
           [
               T=float
           ]
-d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(310): warning C4244: 'argument' : conversion de 'T' en 'int', perte possible de données
-          with
-          [
-              T=float
-          ]
-d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(376): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
-          with
-          [
-              T=float
-          ]
-d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(377): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
-          with
-          [
-              T=float
-          ]
-d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(378): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
-          with
-          [
-              T=float
-          ]
-d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(379): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
-          with
-          [
-              T=float
-          ]
-d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(407): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
+d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(342): warning C4244: 'argument' : conversion de 'T' en 'int', perte possible de données
           with
           [
               T=float
@@ -234,17 +209,7 @@ d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(410): wa
           [
               T=float
           ]
-d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(438): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
-          with
-          [
-              T=float
-          ]
-d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(439): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
-          with
-          [
-              T=float
-          ]
-d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(440): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
+d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(411): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
           with
           [
               T=float
@@ -254,42 +219,57 @@ d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(441): wa
           [
               T=float
           ]
-d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(469): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
+d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(442): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
           with
           [
               T=float
           ]
-d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(470): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
+d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(443): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
           with
           [
               T=float
           ]
-d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(471): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
+d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(444): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
           with
           [
               T=float
           ]
-d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(472): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
+d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(474): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
           with
           [
               T=float
           ]
-d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(500): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
+d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(475): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
           with
           [
               T=float
           ]
-d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(501): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
+d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(476): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
           with
           [
               T=float
           ]
-d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(502): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
+d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(477): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
           with
           [
               T=float
           ]
-d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(503): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
+d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(506): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(507): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(508): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(509): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
           with
           [
               T=float
@@ -314,22 +294,42 @@ d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(541): wa
           [
               T=float
           ]
-d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(558): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
+d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(577): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
           with
           [
               T=float
           ]
-d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(559): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
+d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(578): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
           with
           [
               T=float
           ]
-d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(560): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
+d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(579): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
           with
           [
               T=float
           ]
-d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(561): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
+d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(580): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(597): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(598): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(599): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+d:\repo\hae_jean_gp2\cours5\consoleapplication1\consoleapplication1.cpp(600): warning C4244: '=' : conversion de 'T' en 'int', perte possible de données
           with
           [
               T=float

@@ -12,6 +12,7 @@
 #include "Proj.hpp"
 #include "Particle.h"
 #include <windows.h>
+#include <SFML/Audio.hpp>
 
 static sf::Shader * simpleShader = nullptr;
 float ttime;
@@ -73,8 +74,35 @@ int main()
 
 		sf::RectangleShape groundshape(Vector2f(1920,1080));
 
+		sf::Music music;
+		if (!music.openFromFile("music.ogg")) { printf("unable to load true soviet music\n"); }
+		music.setVolume(35);
+		music.setLoop(true);
+		music.play();
+
+		sf::SoundBuffer bexplo;
+		if (!bexplo.loadFromFile("big explosion.wav")) { printf("unable to load big explosion sound\n"); }
+
+		sf::SoundBuffer sexplo;
+		if (!sexplo.loadFromFile("small explosion.wav")) { printf("unable to load small explosion sound\n"); }
+
+		sf::SoundBuffer gunsound;
+		if (!gunsound.loadFromFile("Gun.wav")) { printf("unable to load Gun sound\n"); }
+
+		sf::Sound gsound;
+		gsound.setBuffer(gunsound);
+
+		sf::Sound ssound;
+		ssound.setBuffer(sexplo);
+
+		sf::Sound bsound;
+		bsound.setBuffer(bexplo);
+
 		sf::Texture ground;
-		if (!ground.loadFromFile("ground.png")) { printf("unable to load ground texture\n"); }
+		if (!ground.loadFromFile("ground.jpg")) { printf("unable to load ground texture\n"); }
+
+		sf::Texture ruin;
+		if (!ruin.loadFromFile("ruin.png")) { printf("unable to load ruin texture\n"); }
 
 		groundshape.setTexture(&ground);
 
@@ -109,6 +137,7 @@ int main()
 		sf::Vector2f vec(400, 400);
 		sf::RectangleShape CenterWallShape(vec);
 		CenterWallShape.setFillColor(sf::Color::White);
+		CenterWallShape.setTexture(&ruin);
 		CenterWallShape.setPosition(1920 / 2 - 200, 1080 / 2 - 200);
 		Vector2f offset1 = Vector2f(shape.getSize().x / 2, shape.getSize().y / 2 - 10);
 		Vector2f offset2 = Vector2f(shape2.getSize().x / 2, shape2.getSize().y / 2 - 5);
@@ -278,6 +307,8 @@ int main()
 						Projectils.push_back(zbleh);
 						Boom zbleh2(point1 - Vector2f(point.x / 10, point.y / 10), &sparks, 20, true);
 						Boomlist.push_back(zbleh2);
+						gsound.play();
+						
 					}
 					else if (sf::Joystick::getAxisPosition(0, Joystick::Z) < 50) p1canshoot = true;
 				}
@@ -299,6 +330,7 @@ int main()
 						Projectils.push_back(zbleh);
 						Boom zbleh2(point1-Vector2f(point.x/10, point.y/10), &sparks, 20, true);
 						Boomlist.push_back(zbleh2);
+						gsound.play();
 					}
 					else if (sf::Joystick::getAxisPosition(1, Joystick::Z) < 50) p2canshoot = true;
 				}
@@ -377,6 +409,8 @@ int main()
 							minx = posbase.x - 10;
 							maxy = posbase.y + 10;
 							miny = posbase.y - 10;
+
+							ssound.play();
 							break;
 						}
 						else if (zbleh.Life >= 2)
@@ -408,6 +442,8 @@ int main()
 							minx = posbase.x - 10;
 							maxy = posbase.y + 10;
 							miny = posbase.y - 10;
+
+							ssound.play();
 							break;
 						}
 						else if (zbleh.Life >= 2)
@@ -439,6 +475,7 @@ int main()
 							minx = posbase.x - 10;
 							maxy = posbase.y + 10;
 							miny = posbase.y - 10;
+							ssound.play();
 							break;
 						}
 						else if (zbleh.Life >= 2)
@@ -470,6 +507,7 @@ int main()
 							minx = posbase.x - 10;
 							maxy = posbase.y + 10;
 							miny = posbase.y - 10;
+							ssound.play();
 							break;
 						}
 						else if (zbleh.Life >= 2)
@@ -501,6 +539,7 @@ int main()
 							minx = posbase.x - 10;
 							maxy = posbase.y + 10;
 							miny = posbase.y - 10;
+							ssound.play();
 							break;
 						}
 						else if (zbleh.Life >= 2)
@@ -522,13 +561,13 @@ int main()
 
 				if (TankCol.CheckCollidingWithSphere(zbleh.collider) && !p1dead) {
 
-					Boom zbleh2(shape.getPosition(), &sparks, 80, false);
+					Boom zbleh2(shape.getPosition(), &explosion, 80, false);
 					Boomlist.push_back(zbleh2);
 					Boom zbleh3(shape.getPosition(), &sparks, 80, false);
 					Boomlist.push_back(zbleh3);
 
 					doflash = true;
-
+					bsound.play();
 					shape.setFillColor(sf::Color::Transparent);
 					gun.setFillColor(sf::Color::Transparent);
 					p1dead = true;
@@ -542,13 +581,13 @@ int main()
 					break;
 				}
 				if (Tank2Col.CheckCollidingWithSphere(zbleh.collider) && !p2dead) {
-					Boom zbleh2(shape2.getPosition(), &sparks, 80, false);
+					Boom zbleh2(shape2.getPosition(), &explosion, 80, false);
 					Boomlist.push_back(zbleh2);
 					Boom zbleh3(shape2.getPosition(), &sparks, 80, false);
 					Boomlist.push_back(zbleh3);
 
 					doflash = true;
-
+					bsound.play();
 					shape2.setFillColor(sf::Color::Transparent);
 					gun2.setFillColor(sf::Color::Transparent);
 					p2dead = true;
@@ -570,7 +609,7 @@ int main()
 
 			for (Boom& zbleh : Boomlist)
 			{
-				if (zbleh.timer <= 0) {
+				if (zbleh.timer <= zbleh.maxtimer - 30) {
 					Boomlist.remove(zbleh);
 					break;
 				}
