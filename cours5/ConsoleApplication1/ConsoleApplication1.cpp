@@ -23,6 +23,8 @@ sf::RectangleShape shape(vec);
 float rot1 = -90;
 float rot2 = -90;
 bool p1dead = false;
+bool p1wins = false;
+bool p2wins = false;
 bool p2dead = false;
 sf::RectangleShape shape2(vec);
 sf::RectangleShape gun(Vector2f(50, 100 * 1.2));
@@ -36,7 +38,8 @@ int shaker = 0;
 bool doplay = false;
 int textimer = 0;
 bool doflash = false;
-
+int ScoreP1 = 0;
+int ScoreP2 = 0;
 
 
 
@@ -582,6 +585,7 @@ int main()
 					shape.setFillColor(sf::Color::Transparent);
 					gun.setFillColor(sf::Color::Transparent);
 					p1dead = true;
+					if (!p2dead) { p2wins = true;  ScoreP2 += 1; }
 					Projectils.remove(zbleh);
 					shaker = -50;
 					shake = true;
@@ -602,6 +606,7 @@ int main()
 					shape2.setFillColor(sf::Color::Transparent);
 					gun2.setFillColor(sf::Color::Transparent);
 					p2dead = true;
+					if (!p1dead) { p1wins = true; ScoreP1 += 1; }
 					Projectils.remove(zbleh);
 					shaker = -50;
 					shake = true;
@@ -674,6 +679,24 @@ int main()
 			text2.setString("(Player 2 missing)");
 			text2.setCharacterSize(50);
 
+			sf::Text Score1;
+			Score1.setOutlineColor(sf::Color::Black);
+			Score1.setOutlineThickness(2);
+			Score1.setFont(font);
+			Score1.setFillColor(sf::Color(255, 174, 13));
+			Score1.setPosition(20, 20);
+			Score1.setString("P1 Score : "+ std::to_string(ScoreP1));
+			Score1.setCharacterSize(40);
+
+			sf::Text Score2;
+			Score2.setOutlineColor(sf::Color::Black);
+			Score2.setOutlineThickness(2);
+			Score2.setFont(font);
+			Score2.setFillColor(sf::Color(255, 174, 13));
+			Score2.setPosition(20, 70);
+			Score2.setString("P2 Score : " + std::to_string(ScoreP2));
+			Score2.setCharacterSize(40);
+
 			sf::Text title;
 			title.setOutlineColor(sf::Color::Black);
 			title.setOutlineThickness(2);
@@ -684,20 +707,23 @@ int main()
 			title.setCharacterSize(172);
 
 
-			if (p1dead) 
+			if (p2wins) 
 			{
 				title.setPosition(320, 100);
 				text.setPosition(740, 800);
 				title.setString("Player 2 wins!");
 				text.setString("Press Start to restart");
 			}
-			else if (p2dead) 
+			else if (p1wins) 
 			{
 				title.setPosition(320, 100);
 				text.setPosition(740, 800);
 				title.setString("Player 1 wins!");
 				text.setString("Press Start to restart");
 			}
+
+			window.draw(Score1);
+			window.draw(Score2);
 
 			if (!Joystick::isConnected(1))
 			{
@@ -712,7 +738,7 @@ int main()
 			if (textimer > 15) textimer = -16;
 			window.display();
 
-			if (doplay && sf::Joystick::isButtonPressed(0, 7)) { Boomlist.clear(); Projectils.clear(); doplay = false; break; }
+			if (doplay && sf::Joystick::isButtonPressed(0, 7)) { p1wins = false; p2wins = false; Boomlist.clear(); Projectils.clear(); doplay = false; break; }
 		}
 	}
 	
