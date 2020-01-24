@@ -152,8 +152,14 @@ int main()
 		if (!PantherTurret.loadFromFile("tanks_0_4.png")) {}
 
 
+		sf::Font font2;
+		if (!font2.loadFromFile(/*"arial.ttf"*/"Chernobyl.otf"))
+		{
+			// erreur...
+		}
+
 		sf::Font font;
-		if (!font.loadFromFile("arial.ttf"))
+		if (!font.loadFromFile(/*"arial.ttf"*/"Molot.otf"))
 		{
 			// erreur...
 		}
@@ -404,11 +410,12 @@ int main()
 							Projectils.remove(zbleh);
 							shaker = 0;
 							shake = true;
+							flash.setFillColor(sf::Color(255, 255, 255, 60));
 							doflash = true;
-							maxx = posbase.x + 10;
-							minx = posbase.x - 10;
-							maxy = posbase.y + 10;
-							miny = posbase.y - 10;
+							maxx = posbase.x + 5;
+							minx = posbase.x - 5;
+							maxy = posbase.y + 5;
+							miny = posbase.y - 5;
 
 							ssound.play();
 							break;
@@ -437,11 +444,12 @@ int main()
 							Projectils.remove(zbleh);
 							shaker = 0;
 							shake = true;
+							flash.setFillColor(sf::Color(255, 255, 255, 60));
 							doflash = true;
-							maxx = posbase.x + 10;
-							minx = posbase.x - 10;
-							maxy = posbase.y + 10;
-							miny = posbase.y - 10;
+							maxx = posbase.x + 5;
+							minx = posbase.x - 5;
+							maxy = posbase.y + 5;
+							miny = posbase.y - 5;
 
 							ssound.play();
 							break;
@@ -470,11 +478,12 @@ int main()
 							Projectils.remove(zbleh);
 							shaker = 0;
 							shake = true;
+							flash.setFillColor(sf::Color(255, 255, 255, 60));
 							doflash = true;
-							maxx = posbase.x + 10;
-							minx = posbase.x - 10;
-							maxy = posbase.y + 10;
-							miny = posbase.y - 10;
+							maxx = posbase.x + 5;
+							minx = posbase.x - 5;
+							maxy = posbase.y + 5;
+							miny = posbase.y - 5;
 							ssound.play();
 							break;
 						}
@@ -502,11 +511,12 @@ int main()
 							Projectils.remove(zbleh);
 							shaker = 0;
 							shake = true;
+							flash.setFillColor(sf::Color(255, 255, 255, 60));
 							doflash = true;
-							maxx = posbase.x + 10;
-							minx = posbase.x - 10;
-							maxy = posbase.y + 10;
-							miny = posbase.y - 10;
+							maxx = posbase.x + 5;
+							minx = posbase.x - 5;
+							maxy = posbase.y + 5;
+							miny = posbase.y - 5;
 							ssound.play();
 							break;
 						}
@@ -534,11 +544,12 @@ int main()
 							Projectils.remove(zbleh);
 							shaker = 0;
 							shake = true;
+							flash.setFillColor(sf::Color(255, 255, 255, 60));
 							doflash = true;
-							maxx = posbase.x + 10;
-							minx = posbase.x - 10;
-							maxy = posbase.y + 10;
-							miny = posbase.y - 10;
+							maxx = posbase.x + 5;
+							minx = posbase.x - 5;
+							maxy = posbase.y + 5;
+							miny = posbase.y - 5;
 							ssound.play();
 							break;
 						}
@@ -565,7 +576,7 @@ int main()
 					Boomlist.push_back(zbleh2);
 					Boom zbleh3(shape.getPosition(), &sparks, 80, false);
 					Boomlist.push_back(zbleh3);
-
+					flash.setFillColor(sf::Color(255, 255, 255, 170));
 					doflash = true;
 					bsound.play();
 					shape.setFillColor(sf::Color::Transparent);
@@ -585,7 +596,7 @@ int main()
 					Boomlist.push_back(zbleh2);
 					Boom zbleh3(shape2.getPosition(), &sparks, 80, false);
 					Boomlist.push_back(zbleh3);
-
+					flash.setFillColor(sf::Color(255, 255, 255, 170));
 					doflash = true;
 					bsound.play();
 					shape2.setFillColor(sf::Color::Transparent);
@@ -641,33 +652,36 @@ int main()
 			window.draw(CenterWallShape);
 			for (Boom zbleh : Boomlist) {
 				window.draw(zbleh.shape1);
-				window.draw(zbleh.shape2);
-				window.draw(zbleh.shape3);
-				window.draw(zbleh.shape4);
 			}
 
 			if(doflash)window.draw(flash);
 
 			sf::Text text;
+			text.setOutlineColor(sf::Color::Black);
+			text.setOutlineThickness(2);
 			text.setFont(font);
-			text.setFillColor(sf::Color::Red);
-			text.setPosition(800, 800);
+			text.setFillColor(sf::Color(232, 52, 49));
+			text.setPosition(750, 800);
 			text.setString("Press A to play");
 			text.setCharacterSize(50);
 
 			sf::Text text2;
+			text2.setOutlineColor(sf::Color::Black);
+			text2.setOutlineThickness(2);
 			text2.setFont(font);
-			text2.setFillColor(sf::Color::Red);
-			text2.setPosition(770, 900);
+			text2.setFillColor(sf::Color(232, 52, 49));
+			text2.setPosition(730, 900);
 			text2.setString("(Player 2 missing)");
 			text2.setCharacterSize(50);
 
 			sf::Text title;
-			title.setFont(font);
-			title.setFillColor(sf::Color::Red);
+			title.setOutlineColor(sf::Color::Black);
+			title.setOutlineThickness(2);
+			title.setFont(font2);
+			title.setFillColor(sf::Color(232, 52, 49));
 			title.setPosition(150, 100);
 			title.setString("A shitty tonk game");
-			title.setCharacterSize(200);
+			title.setCharacterSize(172);
 
 
 			if (p1dead) 

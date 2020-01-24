@@ -9,9 +9,6 @@ public:
 	int timer;
 	int maxtimer;
 	CircleShape shape1;
-	CircleShape shape2;
-	CircleShape shape3;
-	CircleShape shape4;
 	Vector2f Position;
 	bool agun;
 	
